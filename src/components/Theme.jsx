@@ -4,8 +4,12 @@ export const theme = createTheme({
     typography: {
      fontFamily: 'mulish',
       h3: {
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: 700,
+      },
+      h2:{
+        fontSize: 32,
+        fontWeight: 600,
       }
     },
     components:{

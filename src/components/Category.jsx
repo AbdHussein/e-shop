@@ -1,40 +1,26 @@
+import React from 'react'
 import Box from '@mui/material/Box'
 import { Typography } from '@mui/material';
 import styled from 'styled-components'
 import "@fontsource/mulish"; // Defaults to weight 400
 import "@fontsource/mulish/800.css"; // Specify weight
+import NewBox from './styled/NewBox';
+import ImgBox from './styled/ImgBox';
 
-const NewBox = styled(Box)`
-    border-radius: 20px;
-    width:380px;
-    height:390px ;
-    display:flex;
-    flex-direction: column;
-    gap:30px;
-    align-items: center;
-    justify-content: center;
-    padding:30px;
-`
 
-const ImgBox = styled(Box)`
-    border-radius: 20px;
-    background: #F7F8FC;
-    width:380px;
-    height:346px;
-    padding:30px;
-`
+
+
 
  export const Category = ({ src, text }) => {
   return (
-
     <NewBox>
         <a href="#">
           <ImgBox>
-              <img src={src} alt="" width={'100%'} />
+              <img src={src} alt="" width={'100%'} height={'180px'} />
           </ImgBox>
         </a>
     
-      <Typography variant="h3">{text}</Typography>
+      <Typography variant="h3" sx={{whiteSpace:'nowrap'}}>{text}</Typography>
     </NewBox>
   )
 }
