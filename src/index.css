@@ -28,7 +28,7 @@ body{
     background: #242424 0% 0% no-repeat padding-box;
     opacity: 1;
 }
-.css-to4x1n-MuiBadge-badge{
+.MuiBadge-badge{
     background-color: #FCDD06 !important;
     min-width: 0px !important;
     width: 6px !important;

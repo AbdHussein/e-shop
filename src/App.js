@@ -1,10 +1,12 @@
-import Button from '@mui/material/Button';
+import React from 'react'
+import NavApp from './components/NavApp';
+import HomeSlider from './components/HomeSlider';
 
 function App() {
   return (
-  <Button variant='contained'>
-    Farah
-  </Button>
+ 
+ <NavApp/>
+
   );
 }
 
