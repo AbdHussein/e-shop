@@ -37,3 +37,10 @@ body{
     right: 6px !important;
     color: black !important;
 }
+.grey{
+    background: #F2F2F2 0% 0% no-repeat padding-box;
+}
+.MuiGrid-root{
+display: flex;
+justify-content: center;
+}

@@ -4,8 +4,9 @@ import HomeSlider from './components/HomeSlider';
 
 function App() {
   return (
- 
- <NavApp/>
+ <> 
+ <NavApp/><HomeSlider/></>
+
 
   );
 }
