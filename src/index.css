@@ -1,39 +1,92 @@
-
-body{
-    margin: 0 auto;
-  
+body {
+  margin: 0 auto;
 }
-.yellow{
-    color: #FCDD06;;
+.yellow {
+  color: #fcdd06;
 }
-.logoName
-{
-    /* top: 0px;
+.logoName {
+  /* top: 0px;
     left: 73px;
     width: 107px;
     height: 50px;
     /* UI Properties */
-    /* text-align: left;
+  /* text-align: left;
     font: normal normal 900 40px/15px Muli;
-    letter-spacing: 1.6px; */ 
-    color: #FFFFFF;
+    letter-spacing: 1.6px; */
+  color: #ffffff;
 }
 
-.MuiToolbar-root{
-    top: 0px;
-    left: 0px;
-   padding: 0px 70px;
-    height: 85px;
-    /* UI Properties */
-    background: #242424 0% 0% no-repeat padding-box;
-    opacity: 1;
+.MuiToolbar-root {
+  top: 0px;
+  left: 0px;
+  padding: 0px 70px;
+  height: 85px;
+  /* UI Properties */
+  background: #242424 0% 0% no-repeat padding-box;
+  opacity: 1;
+  padding-left: 53px !important;
+  padding-right: 53px !important;
 }
-.MuiBadge-badge{
-    background-color: #FCDD06 !important;
-    min-width: 0px !important;
-    width: 6px !important;
-    height: 14px !important;
-    top: 3px !important;
-    right: 6px !important;
-    color: black !important;
+.MuiBadge-badge {
+  background-color: #fcdd06 !important;
+  min-width: 0px !important;
+  width: 6px !important;
+  height: 14px !important;
+  top: 3px !important;
+  right: 6px !important;
+  color: black !important;
+}
+.grey {
+  background: #f2f2f2 0% 0% no-repeat padding-box;
+}
+.MuiGrid-root {
+  display: flex;
+  justify-content:space-around;
+  gap: 70px;
+ 
+}
+.AddWidth{
+  max-width: 337px;
+
+}
+.MuiButtonBase-root{
+  border-radius: 20px !important;
+  letter-spacing: 0.88px
+}
+.swiper-pagination-bullet-active {
+  background: #fcdd06 !important;
+}
+:root {
+  --swiper-theme-color: #000000 !important;
+  --swiper-navigation-size: 55px !important;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute !important;
+
+  top: 96.35% !important;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 18px !important;
+  font-weight: 900;
+  padding-bottom: 17.5px;
+}
+.swiper-button-next {
+  right: 45.7% !important;
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  padding-bottom: 10px;
+}
+.swiper-button-prev {
+  left: 45.8% !important;
+}
+section {
+padding-bottom: 35px;
+  margin-bottom: 35px;
+}
+a:-webkit-any-link{
+  color: unset !important;
+  text-decoration: none !important
 }

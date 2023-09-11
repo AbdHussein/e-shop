@@ -1,48 +1,103 @@
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
-import 'swiper/swiper.css';
-import 'swiper/swiper-element.css';
-import { Typography } from '@mui/material';
-import styled from 'styled-components';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import "swiper/swiper.css";
+import "swiper/swiper-element.css";
+import "swiper/swiper-bundle.css";
+import { Typography } from "@mui/material";
+import styled from "styled-components";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import TextBox from './styled/TextBox'
+import ImgSlider from "./styled/ImgSlider";
+import ShopBtn from "./styled/ShopBtn";
 
-const Box = styled("div")(({ theme }) => ({
 
-        display: "grid", gridTemplateColumns: "repeat(2, 1fr)",
-         justifyContent: "center",
-         alignItems: "center",
-    
-}));
-const TextBox = styled("div")(({ theme }) => ({
-
-    display: "grid", gridTemplateColumns: "repeat(1, 3fr)",
-     justifyContent: "center",
-     alignItems: "center",
-
-}));
 
 const HomeSlider = () => {
-    return (
-        <Swiper
-            spaceBetween={50}
-            slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
-        >
+  return (
+    <Swiper  
+    className="grey"
+    height="100vh"
+    modules={[Navigation, Pagination, Scrollbar, A11y]}
+      spaceBetween={50}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      onSlideChange={() => console.log("slide change")}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide >
+        <Grid rowSpacing={1} columnSpacing={{ xs:1 , sm: 2, md: 3 }}>
+          <Grid item xs={6}>
+            <TextBox>
+              <Typography variant="h1">Save up to $39.99</Typography>
+              <Typography variant="h6">PlayStation 5</Typography>
+              <Typography variant="h1" className="AddWidth">
+                Lightning-fast download speed with super-fast SSD storage
+              </Typography>
+              <ShopBtn>
+              <Button variant="contained" color="primary" href="#outlined-buttons">
+                  Shop Now
+                </Button>
+              </ShopBtn>
+            </TextBox>
+          </Grid>
+          <Grid item xs={6}>
+            <ImgSlider>
+              <img src="/static/img1.PNG" alt="" />
+            </ImgSlider>
+          </Grid>
+        </Grid>
+      </SwiperSlide>
+      <SwiperSlide >
+        <Grid rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid item xs={6}>
+            <TextBox>
+            <Typography variant="h1">Save up to $49.99</Typography>
+              <Typography variant="h6">APPLE AIRPODS</Typography>
+              <Typography  variant="h1" className="AddWidth" >
+              AirPods are the best-selling headphones in the world
+              </Typography>
+              <ShopBtn>
+              <Button variant="contained" color="primary"  >
+                  Shop Now
+                </Button>
+              </ShopBtn>
+            </TextBox>
+          </Grid>
+          <Grid item xs={6}>
+            <ImgSlider>
+              <img src="/static/img12.PNG" alt="" />
+            </ImgSlider>
+          </Grid>
+        </Grid>
+      </SwiperSlide>
+      <SwiperSlide >
+        <Grid rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid item xs={6}>
+            <TextBox>
+            <Typography variant="h1">Save up to $99.99</Typography>
+              <Typography variant="h6">iPhone 11 PRO</Typography>
+              <Typography variant="h1" className="AddWidth">
+              Pro cameras.Pro display. Pro performance.
+              </Typography>
+              <ShopBtn>
+              <Button variant="contained" color="primary" href="#outlined-buttons">
+                  Shop Now
+                </Button>
+              </ShopBtn>
+            </TextBox>
+          </Grid>
+          <Grid item xs={6}>
+            <ImgSlider>
+              <img src="/static/img13.PNG" alt="" />
+            </ImgSlider>
+          </Grid>
+        </Grid>
+      </SwiperSlide>
+    </Swiper>
+  );
+};
 
-
-            <SwiperSlide> <Box >
-             <TextBox>
-              <Typography vareint="h3">Save up to $39.99</Typography>
-              <Typography vareint="h2">PlayStation 5</Typography>
-              <Typography vareint="h3">Lightning-fast download speed with super-fast SSD storage</Typography>
-             
-             </TextBox>
-            </Box></SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-        </Swiper>
-    )
-}
-
-export default HomeSlider
+export default HomeSlider;
