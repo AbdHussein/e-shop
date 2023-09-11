@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const ImgBox = styled(Box)`
     border-radius: 20px;
     background: #F7F8FC;
-    width:250px;
+    width:220px;
     height:246px;
     padding:30px;
     display: flex;
