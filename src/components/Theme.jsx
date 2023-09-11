@@ -10,6 +10,14 @@ export const theme = createTheme({
       h2:{
         fontSize: 32,
         fontWeight: 600,
+      },
+      h4:{
+        fontSize: 24,
+        fontWeight: 400,
+      },
+      body1:{
+        fontSize: 30,
+        fontWeight: 600,
       }
     },
     components:{

@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import styled from 'styled-components'
  export const NewBox = styled(Box)`
     border-radius: 20px;
-    width:260px;
+    width:220px;
     height:290px ;
     display:flex;
     flex-direction: column;
