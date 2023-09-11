@@ -7,6 +7,7 @@ import Container from '@mui/material/Container';
 import SectionHeading from '../components/styled/SectionHeading';
 import YellowSpan from '../components/styled/YellowSpan';
 import HomeSlider from '../components/HomeSlider'
+import ProductCard from '../components/ProductCard'
 const Home = () => {
   return (
     <>
@@ -14,7 +15,7 @@ const Home = () => {
        <HomeSlider/>
       </section>
       <section className='Featured Categories'>
-        <Container maxWidth='xl'>
+        <Container>
           <SectionHeading>
             <Typography variant="h2" sx={{ marginBottom: "10px" }}>
               Featured Categories

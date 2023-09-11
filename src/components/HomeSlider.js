@@ -11,6 +11,7 @@ import Grid from "@mui/material/Grid";
 import TextBox from './styled/TextBox'
 import ImgSlider from "./styled/ImgSlider";
 import ShopBtn from "./styled/ShopBtn";
+import { alignments } from "@floating-ui/utils";
 
 
 
@@ -27,8 +28,8 @@ const HomeSlider = () => {
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      <SwiperSlide >
-        <Grid rowSpacing={1} columnSpacing={{ xs:1 , sm: 2, md: 3 }}>
+      <SwiperSlide>
+        <Grid rowSpacing={1} columnSpacing={{ xs:1 , sm: 2, md: 3 }}  sx={{ display: 'flex' ,justifyContent:"space-around" , alignItems:"center"}}>
           <Grid item xs={6}>
             <TextBox>
               <Typography variant="h1">Save up to $39.99</Typography>
