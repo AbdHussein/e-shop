@@ -1,20 +1,21 @@
-import React from 'react'
-import Category from '../components/Category';
-import Box from '@mui/material/Box';
-import { Button, Divider, Typography } from '@mui/material';
-import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
-import SectionHeading from '../components/styled/SectionHeading';
-import YellowSpan from '../components/styled/YellowSpan';
-import HomeSlider from '../components/HomeSlider'
+import React from "react";
+import Category from "../components/Category";
+import Box from "@mui/material/Box";
+import { Button, Divider, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
+import SectionHeading from "../components/styled/SectionHeading";
+import YellowSpan from "../components/styled/YellowSpan";
+import HomeSlider from "../components/HomeSlider";
+import ProductCard from "../components/ProductCard";
 const Home = () => {
   return (
     <>
-     <section className='ShopSlider'>
-       <HomeSlider/>
+      <section className="ShopSlider">
+        <HomeSlider />
       </section>
-      <section className='Featured Categories'>
-        <Container maxWidth='xl'>
+      <section className="Featured Categories">
+        <Container maxWidth="xl">
           <SectionHeading>
             <Typography variant="h2" sx={{ marginBottom: "10px" }}>
               Featured Categories
