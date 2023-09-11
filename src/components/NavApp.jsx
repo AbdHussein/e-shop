@@ -18,7 +18,7 @@ const NavApp = () => {
         <Typography variant="h4" marginLeft={6}>
         <Link to="/">  <span className="yellow">Pro</span>Shop</Link>
         </Typography>
-        <Search sx={{ display: "flex", gridTemplateColumns: "repeat(3, 1fr)" }}>
+        <Search >
           <StyledInputBase
             placeholder="Iphone"
             inputProps={{ "aria-label": "search" }}

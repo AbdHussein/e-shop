@@ -14,8 +14,9 @@ const Home = () => {
       <section className="ShopSlider">
         <HomeSlider />
       </section>
+
       <section className="Featured Categories">
-        <Container maxWidth="xl">
+        <Container>
           <SectionHeading>
             <Typography variant="h2" sx={{ marginBottom: "10px" }}>
               Featured Categories
