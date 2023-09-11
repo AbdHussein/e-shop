@@ -58,7 +58,9 @@ const NavApp = () => {
               Wishlist
             </Typography>
           </Badge>
+          <Link to="/Cart" xs={{color:"white"}}>
           <Badge
+            
             color="error"
             badgeContent={0}
             showZero
@@ -73,10 +75,11 @@ const NavApp = () => {
           >
             <ShoppingCartIcon sx={{ fill: "white" }} />
             <Typography fontSize="0.65rem" color={"white"}>
-               <Link to="/Cart" xs={{color:"white"}}> Cart </Link>
+              Cart 
             </Typography>
           
           </Badge>
+          </Link>
         </Notes>
       </Toolbar>
     </AppBar>

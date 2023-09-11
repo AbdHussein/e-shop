@@ -52,7 +52,7 @@ const HomeSlider = () => {
         </Grid>
       </SwiperSlide>
       <SwiperSlide >
-        <Grid rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ display: 'flex' ,justifyContent:"space-around" , alignItems:"center"}}>
           <Grid item xs={6}>
             <TextBox>
             <Typography variant="h1">Save up to $49.99</Typography>
@@ -75,7 +75,7 @@ const HomeSlider = () => {
         </Grid>
       </SwiperSlide>
       <SwiperSlide >
-        <Grid rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ display: 'flex' ,justifyContent:"space-around" ,alignItems:"center"}}>
           <Grid item xs={6}>
             <TextBox>
             <Typography variant="h1">Save up to $99.99</Typography>
