@@ -8,27 +8,17 @@ import { Typography } from "@mui/material";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
+import TextBox from './styled/TextBox'
+import ImgSlider from "./styled/ImgSlider";
+import ShopBtn from "./styled/ShopBtn";
 
-const TextBox = styled("div")(({ theme }) => ({
-  display: "flex",
- flexDirection:"column",
-  justifyContent: "center",
-  alignItems: "center",
-  textAlign:"left"
-}));
 
-const ImgSlider = styled("div")(({ theme }) => ({
-  width: "525px",
-}));
-
-const ShopBtn = styled("div")(({ theme }) => ({
-  height: "56px",
-}));
 
 const HomeSlider = () => {
   return (
     <Swiper  
     className="grey"
+    height="100vh"
     modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
@@ -37,17 +27,17 @@ const HomeSlider = () => {
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      <SwiperSlide>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <SwiperSlide >
+        <Grid rowSpacing={1} columnSpacing={{ xs:1 , sm: 2, md: 3 }}>
           <Grid item xs={6}>
             <TextBox>
-              <Typography vareint="h3">Save up to $39.99</Typography>
-              <Typography vareint="h2">PlayStation 5</Typography>
-              <Typography vareint="h3">
+              <Typography variant="h1">Save up to $39.99</Typography>
+              <Typography variant="h6">PlayStation 5</Typography>
+              <Typography variant="h1" className="AddWidth">
                 Lightning-fast download speed with super-fast SSD storage
               </Typography>
               <ShopBtn>
-                <Button variant="outlined" href="#outlined-buttons">
+              <Button variant="contained" color="primary" href="#outlined-buttons">
                   Shop Now
                 </Button>
               </ShopBtn>
@@ -61,16 +51,16 @@ const HomeSlider = () => {
         </Grid>
       </SwiperSlide>
       <SwiperSlide >
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid item xs={6}>
             <TextBox>
-              <Typography vareint="h3">Save up to $39.99</Typography>
-              <Typography vareint="h2">PlayStation 5</Typography>
-              <Typography vareint="h3">
-                Lightning-fast download speed with super-fast SSD storage
+            <Typography variant="h1">Save up to $49.99</Typography>
+              <Typography variant="h6">APPLE AIRPODS</Typography>
+              <Typography  variant="h1" className="AddWidth" >
+              AirPods are the best-selling headphones in the world
               </Typography>
               <ShopBtn>
-                <Button variant="outlined" href="#outlined-buttons">
+              <Button variant="contained" color="primary"  >
                   Shop Now
                 </Button>
               </ShopBtn>
@@ -78,22 +68,22 @@ const HomeSlider = () => {
           </Grid>
           <Grid item xs={6}>
             <ImgSlider>
-              <img src="/static/img1.PNG" alt="" />
+              <img src="/static/img12.PNG" alt="" />
             </ImgSlider>
           </Grid>
         </Grid>
       </SwiperSlide>
       <SwiperSlide >
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid item xs={6}>
             <TextBox>
-              <Typography vareint="h3">Save up to $39.99</Typography>
-              <Typography vareint="h2">PlayStation 5</Typography>
-              <Typography vareint="h3">
-                Lightning-fast download speed with super-fast SSD storage
+            <Typography variant="h1">Save up to $99.99</Typography>
+              <Typography variant="h6">iPhone 11 PRO</Typography>
+              <Typography variant="h1" className="AddWidth">
+              Pro cameras.Pro display. Pro performance.
               </Typography>
               <ShopBtn>
-                <Button variant="outlined" href="#outlined-buttons">
+              <Button variant="contained" color="primary" href="#outlined-buttons">
                   Shop Now
                 </Button>
               </ShopBtn>
@@ -101,7 +91,7 @@ const HomeSlider = () => {
           </Grid>
           <Grid item xs={6}>
             <ImgSlider>
-              <img src="/static/img1.PNG" alt="" />
+              <img src="/static/img13.PNG" alt="" />
             </ImgSlider>
           </Grid>
         </Grid>

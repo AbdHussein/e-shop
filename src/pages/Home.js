@@ -6,9 +6,16 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import SectionHeading from '../components/styled/SectionHeading';
 import YellowSpan from '../components/styled/YellowSpan';
+import HomeSlider from '../components/HomeSlider'
 const Home = () => {
   return (
     <>
+     <section className='ShopSlider'>
+       
+          
+       <HomeSlider/>
+        
+      </section>
       <section className='Featured Categories'>
         <Container maxWidth='xl'>
           <SectionHeading>

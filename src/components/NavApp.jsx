@@ -1,7 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { styled } from "@mui/material/styles";
 import PersonIcon from "@mui/icons-material/Person";
 import Badge from "@mui/material/Badge";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
@@ -10,12 +9,14 @@ import Search from "./styled/Search";
 import SearchIconButton from "./styled/SearchIconButton";
 import StyledInputBase from "./styled/StyledInputBase";
 import Notes from "./styled/Notes";
+import { Link } from "react-router-dom";
+
 const NavApp = () => {
   return (
     <AppBar position="static">
       <Toolbar sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
-        <Typography variant="h4" marginLeft={8}>
-          <span className="yellow">Pro</span>Shop
+        <Typography variant="h4" marginLeft={6}>
+        <Link to="/">  <span className="yellow">Pro</span>Shop</Link>
         </Typography>
         <Search sx={{ display: "flex", gridTemplateColumns: "repeat(3, 1fr)" }}>
           <StyledInputBase
@@ -58,10 +59,12 @@ const NavApp = () => {
             </Typography>
           </Badge>
           <Badge
+           
             color="error"
             badgeContent={0}
             showZero
             sx={{
+              cursor:"pointer",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -71,8 +74,9 @@ const NavApp = () => {
           >
             <ShoppingCartIcon sx={{ fill: "white" }} />
             <Typography fontSize="0.65rem" color={"white"}>
-              Cart
+               <Link to="/Cart" xs={{color:"white"}}> Cart </Link>
             </Typography>
+          
           </Badge>
         </Notes>
       </Toolbar>
