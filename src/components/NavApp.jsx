@@ -1,15 +1,15 @@
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { styled } from "@mui/material/styles";
-import PersonIcon from '@mui/icons-material/Person';
+import PersonIcon from "@mui/icons-material/Person";
 import Badge from "@mui/material/Badge";
-import BookmarkIcon from '@mui/icons-material/Bookmark';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import Search from './styled/Search'
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Search from "./styled/Search";
 import SearchIconButton from "./styled/SearchIconButton";
 import StyledInputBase from "./styled/StyledInputBase";
 import Notes from "./styled/Notes";
+
 const NavApp = () => {
   return (
     <AppBar position="static">
@@ -27,10 +27,8 @@ const NavApp = () => {
           </SearchIconButton>
         </Search>
 
-        <Notes sx={{ color: 'action.active' }}>
-      
+        <Notes sx={{ color: "action.active" }}>
           <Badge
-     
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -44,7 +42,9 @@ const NavApp = () => {
             </Typography>
           </Badge>
           <Badge
-              color="error" badgeContent={0} showZero
+            color="error"
+            badgeContent={0}
+            showZero
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -58,7 +58,9 @@ const NavApp = () => {
             </Typography>
           </Badge>
           <Badge
-                  color="error" badgeContent={0} showZero
+            color="error"
+            badgeContent={0}
+            showZero
             sx={{
               display: "flex",
               flexDirection: "column",
