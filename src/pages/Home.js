@@ -1,18 +1,19 @@
 import React from 'react'
 import Category from '../components/Category';
 import Box from '@mui/material/Box';
-import { Button, Divider, Typography } from '@mui/material';
+import { Divider, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import SectionHeading from '../components/styled/SectionHeading';
 import YellowSpan from '../components/styled/YellowSpan';
 import HomeSlider from '../components/HomeSlider'
 import ProductCard from '../components/ProductCard'
+import ViewProuducts from '../components/ViewProuducts';
 const Home = () => {
   return (
     <>
-     <section className='ShopSlider'>
-       <HomeSlider/>
+      <section className='ShopSlider'>
+        <HomeSlider />
       </section>
       <section className='Featured Categories'>
         <Container>
@@ -88,33 +89,7 @@ const Home = () => {
           </SectionHeading>
           <Divider sx={{ marginBottom: "43px" }} />
 
-          <Grid
-            container
-            sx={{
-              border: "1px solid #FCDD06",
-              borderRadius: "20px",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <ProductCard
-              src={"/static/camera.jfif"}
-              text={"Canon Eos 80D DSLR Camera"}
-              price={"$799.99"}
-            ></ProductCard>
-            <Divider orientation="vertical" flexItem />
-            <ProductCard
-              src={"/static/mouse.jfif"}
-              text={"Logitech G-Series Gaming Mouse"}
-              price={"$49.99"}
-            ></ProductCard>
-            <Divider orientation="vertical" flexItem />
-            <ProductCard
-              src={"/static/3d-generator.jfif"}
-              text={"Amazon Echo Dot 3rd Generation"}
-              price={"$29.99"}
-            ></ProductCard>
-          </Grid>
+          <ViewProuducts />
         </Container>
       </section>
     </>

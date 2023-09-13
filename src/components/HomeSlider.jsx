@@ -1,26 +1,24 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "swiper/swiper.css";
 import "swiper/swiper-element.css";
 import "swiper/swiper-bundle.css";
 import { Typography } from "@mui/material";
-import styled from "styled-components";
+
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import TextBox from './styled/TextBox'
+import TextBox from "./styled/TextBox";
 import ImgSlider from "./styled/ImgSlider";
 import ShopBtn from "./styled/ShopBtn";
 import { alignments } from "@floating-ui/utils";
 
-
-
 const HomeSlider = () => {
   return (
-    <Swiper  
-    className="grey"
-    height="100vh"
-    modules={[Navigation, Pagination, Scrollbar, A11y]}
+    <Swiper
+      className="grey"
+      height="100vh"
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
       navigation
@@ -29,7 +27,16 @@ const HomeSlider = () => {
       onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>
-        <Grid rowSpacing={1} columnSpacing={{ xs:1 , sm: 2, md: 3 }}  sx={{ display: 'flex' ,justifyContent:"space-around" , alignItems:"center"}}>
+        <Grid
+          rowSpacing={1}
+          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          sx={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+            height: "100%",
+          }}
+        >
           <Grid item xs={6}>
             <TextBox>
               <Typography variant="h1">Save up to $39.99</Typography>
@@ -38,7 +45,11 @@ const HomeSlider = () => {
                 Lightning-fast download speed with super-fast SSD storage
               </Typography>
               <ShopBtn>
-              <Button variant="contained" color="primary" href="#outlined-buttons">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  href="#outlined-buttons"
+                >
                   Shop Now
                 </Button>
               </ShopBtn>
@@ -51,17 +62,25 @@ const HomeSlider = () => {
           </Grid>
         </Grid>
       </SwiperSlide>
-      <SwiperSlide >
-        <Grid rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ display: 'flex' ,justifyContent:"space-around" , alignItems:"center"}}>
+      <SwiperSlide>
+        <Grid
+          rowSpacing={1}
+          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          sx={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
           <Grid item xs={6}>
             <TextBox>
-            <Typography variant="h1">Save up to $49.99</Typography>
+              <Typography variant="h1">Save up to $49.99</Typography>
               <Typography variant="h6">APPLE AIRPODS</Typography>
-              <Typography  variant="h1" className="AddWidth" >
-              AirPods are the best-selling headphones in the world
+              <Typography variant="h1" className="AddWidth">
+                AirPods are the best-selling headphones in the world
               </Typography>
               <ShopBtn>
-              <Button variant="contained" color="primary"  >
+                <Button variant="contained" color="primary">
                   Shop Now
                 </Button>
               </ShopBtn>
@@ -74,17 +93,29 @@ const HomeSlider = () => {
           </Grid>
         </Grid>
       </SwiperSlide>
-      <SwiperSlide >
-        <Grid rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ display: 'flex' ,justifyContent:"space-around" ,alignItems:"center"}}>
+      <SwiperSlide>
+        <Grid
+          rowSpacing={1}
+          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          sx={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
           <Grid item xs={6}>
             <TextBox>
-            <Typography variant="h1">Save up to $99.99</Typography>
+              <Typography variant="h1">Save up to $99.99</Typography>
               <Typography variant="h6">iPhone 11 PRO</Typography>
               <Typography variant="h1" className="AddWidth">
-              Pro cameras.Pro display. Pro performance.
+                Pro cameras.Pro display. Pro performance.
               </Typography>
               <ShopBtn>
-              <Button variant="contained" color="primary" href="#outlined-buttons">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  href="#outlined-buttons"
+                >
                   Shop Now
                 </Button>
               </ShopBtn>
