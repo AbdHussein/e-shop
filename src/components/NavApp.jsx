@@ -16,12 +16,19 @@ const NavApp = () => {
     <AppBar position="static">
       <Toolbar sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
         <Typography variant="h4" marginLeft={6}>
-        <Link to="/">  <span className="yellow">Pro</span>Shop</Link>
+          <Link to="/">
+            {" "}
+            <span className="yellow">Pro</span>Shop
+          </Link>
         </Typography>
-        <Search >
+        <Search>
           <StyledInputBase
             placeholder="Iphone"
-            inputProps={{ "aria-label": "search" }}
+            inputProps={{
+              style: {
+                fontSize: 16,
+              },
+            }}
           />
           <SearchIconButton>
             <SearchIcon />
@@ -29,19 +36,21 @@ const NavApp = () => {
         </Search>
 
         <Notes sx={{ color: "action.active" }}>
-          <Badge
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <PersonIcon sx={{ fill: "white" }} />
-            <Typography fontSize="0.65rem" color={"white"}>
-              Login / Sign up
-            </Typography>
-          </Badge>
+          <Link to="/LogIn">
+            <Badge
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <PersonIcon sx={{ fill: "white" }} />
+              <Typography fontSize="0.65rem" color={"white"}>
+                Login /Sign up
+              </Typography>
+            </Badge>
+          </Link>
           <Badge
             color="error"
             badgeContent={0}
@@ -58,27 +67,25 @@ const NavApp = () => {
               Wishlist
             </Typography>
           </Badge>
-          <Link to="/Cart" xs={{color:"white"}}>
-          <Badge
-            
-            color="error"
-            badgeContent={0}
-            showZero
-            sx={{
-              cursor:"pointer",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              textAlign: "center",
-            }}
-          >
-            <ShoppingCartIcon sx={{ fill: "white" }} />
-            <Typography fontSize="0.65rem" color={"white"}>
-              Cart 
-            </Typography>
-          
-          </Badge>
+          <Link to="/Cart" xs={{ color: "white" }}>
+            <Badge
+              color="error"
+              badgeContent={0}
+              showZero
+              sx={{
+                cursor: "pointer",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+            >
+              <ShoppingCartIcon sx={{ fill: "white" }} />
+              <Typography fontSize="0.65rem" color={"white"}>
+                Cart
+              </Typography>
+            </Badge>
           </Link>
         </Notes>
       </Toolbar>
