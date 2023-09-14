@@ -7,10 +7,12 @@ export const theme = createTheme({
       fontSize: 16,
       fontWeight: 500,
     },
+
     h2: {
       fontSize: 32,
       fontWeight: 600,
     },
+
     h3: {
       fontSize: 20,
       fontWeight: 700,
@@ -18,6 +20,10 @@ export const theme = createTheme({
     h6: {
       fontSize: 50,
       fontWeight: 900,
+    },
+    h2: {
+      fontSize: 32,
+      fontWeight: 600,
     },
     h4: {
       fontSize: 24,
@@ -46,6 +52,15 @@ export const theme = createTheme({
               },
             }),
           ...(ownerState.variant === "outlined" &&
+            ownerState.color === "error" && {
+              backgroundColor: "red",
+              color: "#000",
+              textTransform: "uppercase",
+              "&:hover": {
+                backgroundColor: "red",
+              }
+            }),
+          ...(ownerState.variant === "outlined" &&
             ownerState.color === "primary" && {
               border: "1px solid #FCDD06",
               color: "#000",
@@ -58,7 +73,4 @@ export const theme = createTheme({
       },
     },
   },
-  // color: {
-  //   base: "#FCDD06",
-  // },
 });
