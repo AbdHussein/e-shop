@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import SideImgs from "./components/SideImgs";
 import Product from "./pages/Product";
+import DetailsUL from "./components/DetailsTable";
+import { Grid } from "@mui/material";
 function App() {
   return (
     <>
@@ -14,8 +16,8 @@ function App() {
         <Route path="/Cart" element={<Cart/>}/>
         <Route path="/Product" element={ <Product/>}/>
       </Routes>
- 
-    
+
+
     </>
   );
 }
