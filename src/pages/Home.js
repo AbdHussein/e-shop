@@ -1,7 +1,7 @@
 import React from "react";
 import Category from "../components/Category";
 import Box from "@mui/material/Box";
-import { Button, Divider, Typography } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import SectionHeading from "../components/styled/SectionHeading";
