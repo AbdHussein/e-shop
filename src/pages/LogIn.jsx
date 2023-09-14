@@ -70,7 +70,7 @@ const LogIn = () => {
                 </FormLabel>
 
                 <TextField
-                  label="name@example.com"
+                  label="Password"
                   inputProps={{
                     style: {
                       fontSize: 16,

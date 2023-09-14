@@ -138,3 +138,13 @@ a:-webkit-any-link {
 .css-zow5z4-MuiGrid-root>.MuiGrid-item {
   padding-left: unset !important;
 }
+
+.css-j5w0w9-MuiStepConnector-root {
+  -webkit-flex: unset !important;
+
+  width: 94px;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+  color: #fcdd06 !important;
+}
