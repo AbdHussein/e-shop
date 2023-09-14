@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
-import SignInOutImg from "../components/styled/SignInOutImg";
+
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
@@ -15,9 +15,11 @@ import {
 
 const LogIn = () => {
   return (
-    <section style={{ paddingTop: "35PX" }}>
+    <section
+      style={{ paddingTop: "25px", paddingBottom: "0px", marginBottom: "0px" }}
+    >
       <Container>
-        <Grid container spacing={2}>
+        <Grid container spacing={3}>
           <Grid item xs={4}>
             <Typography variant="body1">Login.</Typography>
             <Typography variant="h4" fontWeight="400" sx={{ color: "#707070" }}>
@@ -29,14 +31,14 @@ const LogIn = () => {
                 display: "flex",
                 justifyContent: "left",
                 flexDirection: "column",
-                gap: "20px",
-                paddingTop: "35px",
+                gap: "10px",
+                paddingTop: "15px",
               }}
             >
               <div>
                 <FormLabel>
                   <Typography
-                    variant="h3"
+                    variant="body2"
                     fontWeight="400"
                     sx={{ color: "black", paddingBottom: "10px" }}
                   >
@@ -59,7 +61,7 @@ const LogIn = () => {
               <div>
                 <FormLabel>
                   <Typography
-                    variant="h3"
+                    variant="body2"
                     fontWeight="400"
                     sx={{ color: "black", paddingBottom: "10px" }}
                   >
@@ -115,7 +117,7 @@ const LogIn = () => {
                     height: "15px",
                     fontSize: "50px",
                     width: "378px",
-                    marginBottom: "30px",
+                    marginBottom: "20px",
                   }}
                 />
                 <Link to="/SignUp">
@@ -126,10 +128,12 @@ const LogIn = () => {
               </div>
             </form>
           </Grid>
-          <Grid item xs={8} sx={{ display: "flex", justifyContent: "end" }}>
-            <SignInOutImg>
-              <img src="/static/SignIn.png" alt="" style={{ width: "100%" }} />
-            </SignInOutImg>
+          <Grid item xs={8} sx={{ display: "flex", justifyContent: "center" }}>
+            <img
+              src="/static/SignIn.png"
+              alt=""
+              style={{ width: "60%", objectFit: "contain" }}
+            />
           </Grid>
         </Grid>
       </Container>

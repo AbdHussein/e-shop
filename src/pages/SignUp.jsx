@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
-import SignInOutImg from "../components/styled/SignInOutImg";
+
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
@@ -14,12 +14,18 @@ import {
 } from "@mui/material";
 const SignUp = () => {
   return (
-    <section style={{ paddingTop: "35PX" }}>
+    <section
+      style={{ paddingTop: "25px", marginBottom: "0px", paddingBottom: "0px" }}
+    >
       <Container>
-        <Grid container spacing={4}>
+        <Grid
+          container
+          spacing={4}
+          sx={{ display: "flex", justifyContent: "space-between" }}
+        >
           <Grid item xs={4}>
             <Typography variant="body1">Signup.</Typography>
-            <Typography variant="h4" fontWeight="400" sx={{ color: "#707070" }}>
+            <Typography variant="h3" fontWeight="400" sx={{ color: "#707070" }}>
               Sign up and get exclusive offers from us
             </Typography>
             <form
@@ -27,14 +33,37 @@ const SignUp = () => {
                 display: "flex",
                 justifyContent: "left",
                 flexDirection: "column",
-                gap: "20px",
-                paddingTop: "35px",
+                gap: "7px",
+                paddingTop: "15px",
               }}
             >
               <div>
                 <FormLabel>
                   <Typography
-                    variant="h3"
+                    variant="body2"
+                    fontWeight="400"
+                    sx={{ color: "black", paddingBottom: "10px" }}
+                  >
+                    Name
+                  </Typography>
+                </FormLabel>
+
+                <TextField
+                  label="Your Name"
+                  inputProps={{
+                    style: {
+                      fontSize: 16,
+                      width: "378px",
+                      padding: "9px 5px",
+                    },
+                  }}
+                  InputLabelProps={{ style: { fontSize: 10 } }}
+                />
+              </div>
+              <div>
+                <FormLabel>
+                  <Typography
+                    variant="body2"
                     fontWeight="400"
                     sx={{ color: "black", paddingBottom: "10px" }}
                   >
@@ -48,7 +77,7 @@ const SignUp = () => {
                     style: {
                       fontSize: 16,
                       width: "378px",
-                      padding: "11px 5px",
+                      padding: "9px 5px",
                     },
                   }}
                   InputLabelProps={{ style: { fontSize: 10 } }}
@@ -57,7 +86,7 @@ const SignUp = () => {
               <div>
                 <FormLabel>
                   <Typography
-                    variant="h3"
+                    variant="body2"
                     fontWeight="400"
                     sx={{ color: "black", paddingBottom: "10px" }}
                   >
@@ -66,12 +95,36 @@ const SignUp = () => {
                 </FormLabel>
 
                 <TextField
-                  label="name@example.com"
+                  label="Password"
                   inputProps={{
                     style: {
                       fontSize: 16,
                       width: "378px",
-                      padding: "11px 5px",
+                      padding: "9px 5px",
+                    },
+                  }}
+                  InputLabelProps={{ style: { fontSize: 10 } }}
+                />
+              </div>
+
+              <div>
+                <FormLabel>
+                  <Typography
+                    variant="body2"
+                    fontWeight="400"
+                    sx={{ color: "black", paddingBottom: "10px" }}
+                  >
+                    Confirm your password
+                  </Typography>
+                </FormLabel>
+
+                <TextField
+                  label="Confirm your password"
+                  inputProps={{
+                    style: {
+                      fontSize: 16,
+                      width: "378px",
+                      padding: "9px 5px",
                     },
                   }}
                   InputLabelProps={{ style: { fontSize: 10 } }}
@@ -89,45 +142,33 @@ const SignUp = () => {
                 <Button
                   variant="contained"
                   color="primary"
-                  sx={{ width: "378px" }}
+                  sx={{ width: "378px", marginLeft: " 24px" }}
                 >
-                  Login
+                  Sign Up
                 </Button>
-                <FormControlLabel
-                  value="RememberMe"
-                  control={<Checkbox />}
-                  label="Remember Me"
-                  labelPlacement="end"
-                  style={{
-                    color: "#707070",
-                  }}
-                  componentsProps={{
-                    typography: {
-                      variant: "body2",
-                    },
-                  }}
-                />
-                <Typography variant="body2">Forgot your password?</Typography>
                 <Divider
                   sx={{
                     height: "15px",
                     fontSize: "50px",
                     width: "378px",
-                    marginBottom: "30px",
                   }}
                 />
-                <Link to="/SignUp">
-                  <Button variant="outlined" color="primary">
-                    Sign up now
-                  </Button>
-                </Link>
+                <Typography variant="body2" sx={{ color: "#707070" }}>
+                  Have an account ?{" "}
+                  <Link to="/LogIn">
+                    {" "}
+                    <span style={{ color: "black" }}>Login</span>
+                  </Link>
+                </Typography>
               </div>
             </form>
           </Grid>
           <Grid item xs={8} sx={{ display: "flex", justifyContent: "center" }}>
-            <SignInOutImg>
-              <img src="/static/SignUp.png" alt="" style={{ width: "100%" }} />
-            </SignInOutImg>
+            <img
+              src="/static/SignUp.png"
+              alt=""
+              style={{ width: "80%", objectFit: "contain" }}
+            />
           </Grid>
         </Grid>
       </Container>
