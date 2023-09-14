@@ -34,7 +34,7 @@ export const theme = createTheme({
       fontWeight: 600,
     },
     body2: {
-      fontSize: 14,
+      fontSize: 18,
       fontWeight: 400,
     },
   },
@@ -58,6 +58,15 @@ export const theme = createTheme({
               textTransform: "uppercase",
               "&:hover": {
                 backgroundColor: "red",
+              }
+            }),
+          ...(ownerState.variant === "outlined" &&
+            ownerState.color === "primary" && {
+              border: "1px solid #FCDD06",
+              color: "#000",
+              textTransform: "uppercase",
+              "&:hover": {
+                backgroundColor: "#FCDD06",
               },
             }),
         }),
