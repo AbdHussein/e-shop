@@ -1,17 +1,15 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import "swiper/swiper.css";
-import "swiper/swiper-element.css";
-import "swiper/swiper-bundle.css";
 import { Typography } from "@mui/material";
-
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import TextBox from "./styled/TextBox";
 import ImgSlider from "./styled/ImgSlider";
 import ShopBtn from "./styled/ShopBtn";
-import { alignments } from "@floating-ui/utils";
+import "swiper/swiper.css";
+import "swiper/swiper-element.css";
+import "swiper/swiper-bundle.css";
 
 const HomeSlider = () => {
   return (

@@ -1,14 +1,24 @@
 import { Breadcrumbs, Container, Grid, Link, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import SideImgs from '../components/SideImgs'
 import ProductContent from '../components/ProductContent'
+import ProductDetails from '../components/ProductDetails'
+import Reviews from '../components/Reviews'
+import FeaturedProducts from '../components/FeaturedProducts'
 
 
 
 const Product = () => {
+  const [productDetails, setProductDetails] = useState([
+    {proparty:"Brand:",value:"Apple"},
+    {proparty:"Brand:",value:"Apple"},
+    {proparty:"Brand:",value:"Apple"},
+    {proparty:"Brand:",value:"Apple"}
+  ])
+
   return (
     <>
-        <Container>
+        <Container sx={{display:"flex",flexDirection:"column",gap:"30px",marginBottom:"30px"}}>
      <Breadcrumbs aria-label="breadcrumb"sx={{fontSize:"20px"}}>
         <Link underline="hover" color="inherit" href="/" sx={{fontSize:"20px"}}>
           Back 
@@ -26,8 +36,11 @@ const Product = () => {
         </Grid>
       </Grid>
   
-        
+       <ProductDetails productDetails={productDetails}/>
+       <Reviews/>
+      
       </Container>
+      <FeaturedProducts />
     </>
   )
 }
