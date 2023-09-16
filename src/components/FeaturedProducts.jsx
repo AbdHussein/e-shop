@@ -19,7 +19,7 @@ export const FeaturedProducts = () => {
           <YellowSpan></YellowSpan>
         </SectionHeading>
         <Divider sx={{ marginBottom: "43px" }} />
-        <Grid container spacing={3}>
+        <Grid container spacing={3} sx={{ flexWrap: "nowrap", gap: "10px" }}>
           <Grid item xs={4}>
             <ProductCard
               src={"/static/img13.png"}
