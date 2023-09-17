@@ -145,6 +145,8 @@ a:-webkit-any-link {
   width: 94px;
 }
 
-.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active,
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
+
   color: #fcdd06 !important;
 }

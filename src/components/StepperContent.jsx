@@ -5,8 +5,14 @@ const StepperContent = ({ activeStep, setActiveStep }) => {
   if (activeStep === 0) {
     return (
       <div>
-        <h1>hi</h1>
-        <Button onClick={() => setActiveStep(1)}> CLICK</Button>
+        <Button
+          variant="contained"
+          color="primary"
+          href="#outlined-buttons"
+          onClick={() => setActiveStep(1)}
+        >
+          Place Order
+        </Button>
       </div>
     );
   } else if (activeStep === 1) {
