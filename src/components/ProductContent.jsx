@@ -37,8 +37,8 @@ export const ProductContent = ({ title, price, discription }) => {
           <DivButtons>
             <IconButton
               sx={{
-                width: "5px !important",
-                height: "30px !important",
+                minWidth: "30px !important",
+                height: "40px !important",
                 borderRadius: "5px !important",
                 border: "1px solid #FCDD06 !important",
                 backgroundColor: "#fff !important",

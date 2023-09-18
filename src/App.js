@@ -6,11 +6,13 @@ import { Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 
+import Payments from "./pages/Payments";
+
 import Product from "./pages/Product";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
-import Payments from "./pages/Payments";
-
+import Search from "./components/Search";
+import PaymentSuccess from "./components/PaymentSuccess";
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
         <Route path="/LogIn" element={<LogIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Payments" element={<Payments />} />
-      </Routes>
+        <Route path="/Search" element={<Search />} />
+        <Route path="/PaymentSuccess" element={<PaymentSuccess />} />
+      </Routes >
 
 
     </>
