@@ -6,11 +6,9 @@ import ProductCard from "./ProductCard";
 import YellowSpan from "./styled/YellowSpan";
 
 export const FeaturedProducts = () => {
+
   return (
-    <section
-      className="Featured-Products"
-      style={{ backgroundColor: "#F7F8FC", padding: "20px 0px" }}
-    >
+    
       <Container>
         <SectionHeading sx={{ alignItems: "center" }}>
           <Typography variant="h2" sx={{ marginBottom: "10px" }}>
@@ -43,7 +41,6 @@ export const FeaturedProducts = () => {
           </Grid>
         </Grid>
       </Container>
-    </section>
   );
 };
 
