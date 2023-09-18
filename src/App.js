@@ -16,14 +16,15 @@ function App() {
   return (
     <>
       <NavApp />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Product" element={<Product />} />
         <Route path="/LogIn" element={<LogIn />} />
         <Route path="/SignUp" element={<SignUp />} />
-      </Routes> */}
-      <Payments />
+        <Route path="/Payments" element={<Payments />} />
+      </Routes>
+
 
     </>
   );
