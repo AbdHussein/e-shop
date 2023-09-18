@@ -44,7 +44,13 @@ const Home = () => {
           </Box>
         </Container>
       </section>
-     <FeaturedProducts/>
+      <section
+      className="Featured-Products"
+      style={{ backgroundColor: "#F7F8FC", padding: "20px 0px" }}
+    >
+       <FeaturedProducts/>
+    </section>
+    
       <section className="TopRateProducte">
         <Container>
           <SectionHeading>
