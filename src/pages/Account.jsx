@@ -1,11 +1,16 @@
 import React from 'react'
 import Tabs from "../components/Tabs"
+import { Container } from '@mui/material'
 
 const Account = () => {
   return (
-    <div>
-      <Tabs />
-    </div>
+
+      <Container sx={{marginTop:"30px"}}>
+
+     
+      <Tabs name={"Farah Mahdi"} />
+      </Container>
+      
   )
 }
 

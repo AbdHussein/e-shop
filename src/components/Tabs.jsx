@@ -1,11 +1,17 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import ProfileImg from './ProfileImg';
+import TabStyled from './styled/TabStyled';
+import { Button, Divider } from '@mui/material';
+import { Link } from 'react-router-dom';
+import Profile from './Profile';
+import TabConent from './TabConent';
 
-function Tabs(props) {
+function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
@@ -38,7 +44,7 @@ function a11yProps(index) {
   };
 }
 
-export default function VerticalTabs() {
+export default function VerticalTabs({name}) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -47,7 +53,7 @@ export default function VerticalTabs() {
 
   return (
     <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
+      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: "224px",justifyContent:"space-around" }}
     >
       <Tabs
         orientation="vertical"
@@ -55,29 +61,34 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
+        sx={{height:"370px",width:"270px",backgroundColor:"#F2F2F2",borderRadius:"15px",alignItems:"start !important"}}
       >
-        <Tab label="Item One" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
+        <TabStyled icon={<ProfileImg src={'./static/avatar.jpg'}/>} label={name} {...a11yProps(0)} /> 
+        <TabStyled  label="My Orders" {...a11yProps(1)} />
+        <TabStyled  label="Wishlist" {...a11yProps(2)} />
+        <TabStyled  label="Notifcations" {...a11yProps(3)} />
+        <TabStyled  label="Settings" {...a11yProps(4)} />
+        <Divider/>
+        <Link to="/LogIn">
+         <Typography variant='body2'sx={{padding:"15px"}}>LogOut</Typography>
+        </Link>
       </Tabs>
-      <TabPanel value={0} index={0}>
-        Item One
+
+      <TabPanel value={value} index={0}>
+       <Profile/>
       </TabPanel>
-      <TabPanel value={1} index={1}>
-        Item Two
+      <TabPanel value={value} index={1}>
+        <TabConent/>
       </TabPanel>
-      <TabPanel value={2} index={2}>
-        Item Three
+      <TabPanel value={value} index={2}>
+      <TabConent/>
       </TabPanel>
-      <TabPanel value={3} index={3}>
-        Item Four
+      <TabPanel value={value} index={3}>
+      <TabConent/>   
       </TabPanel>
-      <TabPanel value={4} index={4}>
-        Item Five
+      <TabPanel value={value} index={4}>
+      <TabConent/>
       </TabPanel>
-     
     </Box>
   );
 }

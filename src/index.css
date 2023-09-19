@@ -138,3 +138,7 @@ a:-webkit-any-link {
 .css-zow5z4-MuiGrid-root>.MuiGrid-item {
   padding-left: unset !important;
 }
+
+.MuiTabs-indicator{
+  display: none;
+}

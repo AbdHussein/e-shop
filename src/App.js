@@ -8,6 +8,7 @@ import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import Search from "./components/Search";
 import PaymentSuccess from "./components/PaymentSuccess";
+import Account from "./pages/Account";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Search" element={<Search />} />
         <Route path="/PaymentSuccess" element={<PaymentSuccess />} />
+        <Route path="/Account" element={<Account />} />
       </Routes>
     </>
   );
