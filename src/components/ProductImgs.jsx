@@ -3,16 +3,17 @@ import Grid from "@mui/material/Grid";
 import ImgFile from "./styled/ImgFile";
 import { Typography } from "@mui/material";
 const ProductImgs = ({ img0, img1, img2, img3 }) => {
-  const [file, setFile] = useState();
+  const [files, setFiles] = useState([]);
+
   function handelFile(event) {
-    let count = 0;
+    const files = Array.from(event.target.files);
 
-    setFile(event.target.files[0]);
-
-    console.log(event.target.files);
-    if (FileList.length === 4) {
+    if (files.length > 4) {
+      console.error("more than 4 images");
       return;
     }
+
+    setFiles(files);
   }
 
   return (
@@ -26,9 +27,9 @@ const ProductImgs = ({ img0, img1, img2, img3 }) => {
             border: "1px dashed #707070",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            justifyContent: "center",
             textAlign: "center",
-            padding: "40px 20px",
+            alignItems: "center",
             height: "250px",
           }}
         >
@@ -41,29 +42,57 @@ const ProductImgs = ({ img0, img1, img2, img3 }) => {
               onChange={handelFile}
               style={{
                 padding: "20px 10px",
-                width: "70%",
+
                 display: "flex",
                 alignItems: "center",
                 display: "none",
               }}
             />
-            <img src="/static/Capture.PNG" alt="" />
+
+            {files[0] ? (
+              <div style={{ width: "340px", height: "248px" }}>
+                <img
+                  src={URL.createObjectURL(files[0])}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </div>
+            ) : (
+              <div style={{ width: "250px", height: "100px" }}>
+                <img
+                  src={"/static/Capture.PNG"}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+                <Typography fontSize="18px" sx={{ color: "#707070" }}>
+                  Product Images
+                  <span style={{ fontSize: "10px" }}> (4 images allowed)</span>
+                </Typography>
+              </div>
+            )}
           </label>
-          {/* <img src={img0} alt="" /> */}
-          <Typography fontSize="16px" sx={{ color: "#707070" }}>
-            Product Images{" "}
-            <Typography variant="10px">(4 images allowed)</Typography>
-          </Typography>
         </Grid>
         <Grid item xs={4} sx={{ display: "flex", gap: "15px" }}>
           <ImgFile>
-            <img src={img1} alt="" style={{ width: "102px", height: "93px" }} />
+            <img
+              src={files[1] ? URL.createObjectURL(files[1]) : img1}
+              alt=""
+              style={{ width: "102px", height: "93px", objectFit: "cover" }}
+            />
           </ImgFile>
           <ImgFile>
-            <img src={img2} alt="" style={{ width: "102px", height: "93px" }} />
+            <img
+              src={files[2] ? URL.createObjectURL(files[2]) : img2}
+              alt=""
+              style={{ width: "102px", height: "93px", objectFit: "cover" }}
+            />
           </ImgFile>
           <ImgFile>
-            <img src={img3} alt="" style={{ width: "102px", height: "93px" }} />
+            <img
+              src={files[3] ? URL.createObjectURL(files[3]) : img3}
+              alt=""
+              style={{ width: "102px", height: "93px", objectFit: "cover" }}
+            />
           </ImgFile>
         </Grid>
       </Grid>
