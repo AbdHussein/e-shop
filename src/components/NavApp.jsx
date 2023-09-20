@@ -31,7 +31,10 @@ const NavApp = () => {
             }}
           />
           <SearchIconButton>
-            <SearchIcon />
+            <Link to="/Search">
+              {" "}
+              <SearchIcon />
+            </Link>
           </SearchIconButton>
         </Search>
 

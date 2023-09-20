@@ -1,24 +1,7 @@
 import { Divider, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
-const OrderDetails = ({ src, name, price, count, total, line }) => {
-  const setdivider = () => {
-    if ({ line }) {
-      return (
-        <Divider
-          sx={{
-            height: "15px",
-            fontSize: "50px",
-
-            marginBottom: "20px",
-          }}
-        />
-      );
-    } else {
-      return null;
-    }
-  };
-
+const OrderDetails = ({ src, name, price, count, total, line = true }) => {
   return (
     <div>
       <Grid
@@ -56,7 +39,16 @@ const OrderDetails = ({ src, name, price, count, total, line }) => {
           </div>
         </Grid>
       </Grid>
-      {setdivider({ line })}
+
+      {line ? (
+        <Divider
+          sx={{
+            height: "15px",
+            fontSize: "50px",
+            marginBottom: "20px",
+          }}
+        />
+      ) : null}
     </div>
   );
 };
