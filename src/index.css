@@ -139,6 +139,10 @@ a:-webkit-any-link {
   padding-left: unset !important;
 }
 
+.MuiTabs-indicator{
+  display: none;
+ }
+
 .css-j5w0w9-MuiStepConnector-root {
   -webkit-flex: unset !important;
 
