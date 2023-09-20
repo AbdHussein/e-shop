@@ -39,7 +39,7 @@ const Cart = () => {
           </Grid>
         </Grid>
       </section>
-      <section>
+      <section style={{ display: "none" }}>
         <EmptyCart />
       </section>
       <section style={{ display: "none" }}>

@@ -25,7 +25,11 @@ const OneCart = ({ src, price, text }) => {
       <Grid container spacing={3}>
         <Grid item xs={3} sx={{ display: "flex", alignItems: "baseline" }}>
           <ImgCard>
-            <img src={src} alt="" style={{ width: "100%" }} />
+            <img
+              src={src}
+              alt=""
+              style={{ width: "88%", paddingLeft: "15px" }}
+            />
           </ImgCard>
         </Grid>
         <Grid item xs={4} sx={{ display: "flex", alignItems: "baseline" }}>

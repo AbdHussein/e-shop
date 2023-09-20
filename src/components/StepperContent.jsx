@@ -8,6 +8,7 @@ import OrderDetails from "./OrderDetails";
 import ShippingAddress from "./ShippingAddress";
 import PaymentDetails from "./PaymentDetails";
 import ShipOrderDetails from "./ShipOrderDetails";
+import { Link } from "react-router-dom";
 
 const StepperContent = ({ activeStep, setActiveStep }) => {
   if (activeStep === 0) {
@@ -157,15 +158,17 @@ const StepperContent = ({ activeStep, setActiveStep }) => {
             />
           </div>
 
-          <Button
-            sx={{ width: "200px" }}
-            variant="contained"
-            color="primary"
-            href="#outlined-buttons"
-            // onClick={() => setActiveStep(1)}
-          >
-            Place Order
-          </Button>
+          <Link to="/PaymentSuccess">
+            {" "}
+            <Button
+              sx={{ width: "200px" }}
+              variant="contained"
+              color="primary"
+              href="#outlined-buttons"
+            >
+              Place Order
+            </Button>
+          </Link>
         </div>
       </div>
     );
