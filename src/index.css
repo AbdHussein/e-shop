@@ -141,4 +141,16 @@ a:-webkit-any-link {
 
 .MuiTabs-indicator{
   display: none;
+ }
+
+.css-j5w0w9-MuiStepConnector-root {
+  -webkit-flex: unset !important;
+
+  width: 94px;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active,
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
+
+  color: #fcdd06 !important;
 }

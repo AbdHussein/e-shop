@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import CartItemsPay from "./styled/CartItemsPay";
 import CartCheckOut from "./styled/CartCheckOut";
 import Button from "@mui/material/Button";
+import { Link, useNavigate } from "react-router-dom";
 const CartItems = ({ NoOFitems, Total, subTotal }) => {
   return (
     <CartItemsPay>
@@ -30,9 +31,12 @@ const CartItems = ({ NoOFitems, Total, subTotal }) => {
         <Grid item xs={8}>
           <Divider />
           <CartCheckOut>
-            <Button color="primary" variant="contained">
-              Proceed to checkout
-            </Button>
+            <Link to="/Payments">
+              {" "}
+              <Button color="primary" variant="contained">
+                Proceed to checkout
+              </Button>
+            </Link>
           </CartCheckOut>
         </Grid>
       </Grid>
