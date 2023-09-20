@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import ViewProuducts from './ViewProuducts'
 import SectionHeading from './styled/SectionHeading'
 import YellowSpan from './styled/YellowSpan'
+import YellowBtn from './styled/YellowBtn'
 
 const PaymentSuccess = () => {
   return (
@@ -16,7 +17,7 @@ const PaymentSuccess = () => {
         </Box>
         <Box sx={{marginTop:"15px",display:"flex",justifyContent:"end"}}>
         <Link to="/">
-        <Button variant='contained' color='primary'sx={{width:"200px",height:"40px",borderRadius:"2px"}}>Keep Shopping</Button>
+        <YellowBtn variant='contained'>Keep Shopping</YellowBtn>
         </Link>
         </Box>
         <section className="Recently viewed" style={{marginTop:"15px"}}>
