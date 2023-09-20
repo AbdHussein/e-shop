@@ -29,7 +29,7 @@ const Cart = () => {
         </Typography>
       </Breadcrumbs>
 
-      <section style={{ display: "none" }}>
+      <section>
         <Grid container spacing={4}>
           <Grid item xs={8}>
             <Carts />
@@ -39,10 +39,10 @@ const Cart = () => {
           </Grid>
         </Grid>
       </section>
-      <section>
+      <section style={{ display: "none" }}>
         <EmptyCart />
       </section>
-      <section>
+      <section style={{ display: "none" }}>
         <Container>
           <SectionHeading>
             <Typography variant="h2" sx={{ marginBottom: "10px" }}>
