@@ -32,7 +32,6 @@ function App() {
         <Route path="/CreateProduct" element={<CreateProduct />} />
         <Route path="/Products" element={<Products />} />
       </Routes >
-
     </>
   );
 }

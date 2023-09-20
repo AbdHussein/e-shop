@@ -2,6 +2,7 @@ import React from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
+import InventoryIcon from "@mui/icons-material/Inventory2";
 import Badge from "@mui/material/Badge";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -70,7 +71,7 @@ const NavApp = () => {
               Wishlist
             </Typography>
           </Badge>
-          <Link to="/Cart" xs={{ color: "white" }}>
+          <Link to="/Cart" style={{ color: "white" }}>
             <Badge
               color="error"
               badgeContent={0}
@@ -89,6 +90,19 @@ const NavApp = () => {
                 Cart
               </Typography>
             </Badge>
+          </Link>
+          <Link
+            to="/Products"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <InventoryIcon sx={{ fill: "white" }} />
+            <Typography fontSize="0.65rem" color={"white"}>
+              Products
+            </Typography>
           </Link>
         </Notes>
       </Toolbar>
