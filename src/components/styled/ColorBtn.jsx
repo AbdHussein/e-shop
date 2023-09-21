@@ -6,11 +6,11 @@ export const ColorBtn = styled(Button)((props) => ({
     border: "1px solid #000 !important",
   },
   "&:focus": {
-    border: "1px solid #000",
+    border: "1px solid #000 !important",
   },
   width: "40px",
   height: "40px",
-  borderRadius: "100%",
+  borderRadius: "50% !important",
   backgroundColor: props.style.backgroundColor,
   border: "1px solid #ffff  !important",
 }));

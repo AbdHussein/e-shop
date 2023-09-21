@@ -1,10 +1,11 @@
-import { Breadcrumbs, Container, Grid, Link, Typography } from '@mui/material'
+import { Breadcrumbs, Container, Grid, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import SideImgs from '../components/SideImgs'
 import ProductContent from '../components/ProductContent'
 import ProductDetails from '../components/ProductDetails'
 import Reviews from '../components/Reviews'
 import FeaturedProducts from '../components/FeaturedProducts'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 
@@ -15,14 +16,19 @@ const Product = () => {
     { proparty: "Brand:", value: "Apple" },
     { proparty: "Brand:", value: "Apple" }
   ])
-
+  const navigate = useNavigate();
   return (
     <>
       <Container sx={{ display: "flex", flexDirection: "column", gap: "30px", marginBottom: "30px" }}>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ fontSize: "20px" }}>
-          <Link underline="hover" color="inherit" href="/" sx={{ fontSize: "20px" }}>
-            Back
+        <Breadcrumbs aria-label="breadcrumb" sx={{ fontSize: "20px", marginTop: "20px" }}>
+          <Link underline="hover" color="inherit" to={'..'}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(-1);
+            }}>
+            <Typography variant="h1">Back</Typography>
           </Link>
+
 
           <Typography sx={{ fontSize: "20px" }} color="text.primary">iPhone 11 Pro 256GB Memory</Typography>
         </Breadcrumbs>
