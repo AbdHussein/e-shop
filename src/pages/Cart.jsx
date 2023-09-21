@@ -14,13 +14,20 @@ import ViewProuducts from "../components/ViewProuducts";
 import { Divider } from "@mui/material";
 const Cart = () => {
   const navigate = useNavigate();
+
   return (
     <div>
       <Breadcrumbs
         aria-label="breadcrumb"
         sx={{ marginLeft: "6rem", marginTop: "10px" }}
       >
-        <Link to={navigate(-1)}>
+        <Link
+          to={".."}
+          onClick={(e) => {
+            e.preventDefault();
+            navigate(-1);
+          }}
+        >
           <Typography variant="h1">Back</Typography>
         </Link>
 
@@ -29,7 +36,7 @@ const Cart = () => {
         </Typography>
       </Breadcrumbs>
 
-      <section>
+      <section style={{ marginTop: "10px" }}>
         <Grid container spacing={4}>
           <Grid item xs={8}>
             <Carts />
