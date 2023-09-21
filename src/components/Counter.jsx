@@ -9,12 +9,16 @@ export const Counter = () => {
   const IncNum = () => {
     setCount(count + 1);
   };
-  const DecNum = () => {
-    if (count > 0) setCount(count - 1);
-    else {
+  const DecNum = (event) => {
+    if (count > 0) {
+   
+      setCount(count - 1);
+     }
+    else  {
       setCount(0);
-      alert("min limit reached");
+
     }
+
   };
   return (
     <Box
@@ -28,7 +32,7 @@ export const Counter = () => {
       }}
     >
       <IconButton
-        onClick={DecNum}
+        onClick={DecNum} disabled={count===0 ?true:false}
         sx={{
           width: "20px",
           border: "1px solid #FCDD06",
