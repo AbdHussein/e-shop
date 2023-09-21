@@ -10,12 +10,12 @@ const CartItems = ({ NoOFitems, Total, subTotal }) => {
   return (
     <CartItemsPay>
       <Grid container spacing={2} columns={4}>
-        <Grid item xs={8}>
+        <Grid item xs={4}>
           <Typography variant="h2" fontWeight="400">
             Subtotal ({NoOFitems}) items
           </Typography>
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={4}>
           <Typography
             variant="h3"
             fontWeight="400"
@@ -24,11 +24,11 @@ const CartItems = ({ NoOFitems, Total, subTotal }) => {
             {Total}
           </Typography>
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={4}>
           <Typography variant="h2">{subTotal}</Typography>
         </Grid>
 
-        <Grid item xs={8}>
+        <Grid item xs={4}>
           <Divider />
           <CartCheckOut>
             <Link to="/Payments">
