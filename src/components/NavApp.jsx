@@ -56,7 +56,7 @@ const NavApp = () => {
             </Badge>
           </Link>
           <Badge
-            color="error"
+          
             badgeContent={0}
             showZero
             sx={{
