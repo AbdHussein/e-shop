@@ -13,7 +13,10 @@ import CreateProduct from "./pages/CreateProduct";
 import Products from "./pages/Products";
 import Account from "./pages/Account";
 
+
+
 function App() {
+  
   return (
     <>
       <NavApp />
@@ -30,6 +33,7 @@ function App() {
         <Route path="/Products" element={<Products />} />
         <Route path="/Account" element={<Account />} />
       </Routes >
+     
     </>
   );
 }

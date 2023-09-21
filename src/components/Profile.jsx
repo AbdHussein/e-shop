@@ -1,10 +1,12 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import ProfileImgShowed from "./ProfileImgShowed";
 import YellowBtn from "./styled/YellowBtn";
 
 
 const Profile = () => {
+  const[img, setImg]=useState();
+
   return (
     <Grid
       container 
@@ -67,8 +69,19 @@ const Profile = () => {
           paddingTop: "10px !important",
         }}
       >
-        <ProfileImgShowed src={"./static/avatar.jpg"} />
-        <YellowBtn>Upload new photo</YellowBtn>
+        <ProfileImgShowed src={img ? URL.createObjectURL(img) : "./static/avatar.jpg"} />
+        <label htmlFor="img">
+          <input type="file" id="img" name="img" onChange={(event) => setImg(event.target.files[0])}
+              style={{
+                padding: "20px 10px",
+
+                display: "flex",
+                alignItems: "center",
+                display: "none",
+              }} />
+          <YellowBtn>Upload new photo</YellowBtn>
+        </label>
+        
       </Grid>
     </Grid>
   );
