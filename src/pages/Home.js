@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Category from "../components/Category";
 import Box from "@mui/material/Box";
 import { Divider, Typography } from "@mui/material";
@@ -9,8 +9,27 @@ import YellowSpan from "../components/styled/YellowSpan";
 import HomeSlider from "../components/HomeSlider";
 import FeaturedProducts from "../components/FeaturedProducts";
 import ViewProuducts from '../components/ViewProuducts';
+import { Products } from "../components/providers/ProductsContext";
+import api from "../api";
 
 const Home = () => {
+  const { products, setProducts } = useContext(Products)
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await api.get('/api/products')
+
+        setProducts(response.data.products)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    getData()
+  }, [])
+
+  console.log({products})
+
   return (
     <>
       <section className="ShopSlider">
