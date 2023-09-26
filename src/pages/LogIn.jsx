@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Grid from "@mui/material/Grid";
-
+import { Auth } from "../components/providers/AuthContext";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
+import api from "../api";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   FormControlLabel,
@@ -14,6 +16,26 @@ import {
 } from "@mui/material";
 
 const LogIn = () => {
+  const { setUser } = useContext(Auth);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    try {
+      event.preventDefault();
+
+      const response = await api.post("/api/users/login", {
+        email: event.target.email.value,
+        password: event.target.password.value,
+      });
+      const { cart, ...data } = response.data;
+      setUser(data);
+      // setCart(cart);
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <section
       style={{ paddingTop: "25px", paddingBottom: "0px", marginBottom: "0px" }}
@@ -34,6 +56,7 @@ const LogIn = () => {
                 gap: "10px",
                 paddingTop: "15px",
               }}
+              onSubmit={handleSubmit}
             >
               <div>
                 <FormLabel>
@@ -48,6 +71,7 @@ const LogIn = () => {
 
                 <TextField
                   label="name@example.com"
+                  name="email"
                   inputProps={{
                     style: {
                       fontSize: 16,
@@ -71,6 +95,7 @@ const LogIn = () => {
 
                 <TextField
                   label="Password"
+                  name="password"
                   inputProps={{
                     style: {
                       fontSize: 16,
@@ -94,6 +119,7 @@ const LogIn = () => {
                   variant="contained"
                   color="primary"
                   sx={{ width: "378px" }}
+                  type="submit"
                 >
                   Login
                 </Button>

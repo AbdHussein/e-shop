@@ -14,9 +14,11 @@ import Products from "./pages/Products";
 import Account from "./pages/Account";
 import WishlistProvider from "./components/providers/WishlistContext"
 import ProductsProvider from "./components/providers/ProductsContext"
+import  AuthProvider  from "./components/providers/AuthContext";
 
 function App() {
   return (
+    <AuthProvider>
     <ProductsProvider>
       <WishlistProvider>
           <NavApp />
@@ -35,6 +37,7 @@ function App() {
           </Routes>
       </WishlistProvider>
     </ProductsProvider>
+    </AuthProvider>
   );
 }
 
