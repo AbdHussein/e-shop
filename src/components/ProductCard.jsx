@@ -9,9 +9,11 @@ import DivButtons from "./styled/DivButtons";
 import IconButton from "./styled/IconButton";
 import { Wishlist } from "./providers/WishlistContext";
 import { useContext } from "react";
+import { CartContext } from "./providers/CartContext";
 
 export const ProductCard = ({ product }) => {
   const { items, addToWishlist, removeFromWishlist } = useContext(Wishlist);
+  const { addToCart } = useContext(CartContext);
 
   if (!product) return null;
 
@@ -22,7 +24,7 @@ export const ProductCard = ({ product }) => {
       <CardMedia>
         <ImgBox sx={{ background: "#fff", padding: "0px" }}>
           <img
-            src={product.images[0] || ""}
+            src={(product.images && product.images[0]) || ""}
             alt=""
             width={"100%"}
             height={"180px"}
@@ -56,7 +58,9 @@ export const ProductCard = ({ product }) => {
           )}
         </IconButton>
 
-        <AddingButton>Add to cart</AddingButton>
+        <AddingButton onClick={() => addToCart(product._id)}>
+          Add to cart
+        </AddingButton>
       </DivButtons>
     </Product>
   );

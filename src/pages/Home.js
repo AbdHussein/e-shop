@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Category from "../components/Category";
 import Box from "@mui/material/Box";
 import { Divider, Typography } from "@mui/material";
@@ -10,7 +10,6 @@ import HomeSlider from "../components/HomeSlider";
 import FeaturedProducts from "../components/FeaturedProducts";
 import ViewProuducts from "../components/ViewProuducts";
 import { Products } from "../components/providers/ProductsContext";
-import api from "../api";
 
 const Home = () => {
   const { categories } = useContext(Products);

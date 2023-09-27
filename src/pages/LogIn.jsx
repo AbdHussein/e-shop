@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Grid from "@mui/material/Grid";
 import { Auth } from "../components/providers/AuthContext";
+import { CartContext } from "../components/providers/CartContext";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
@@ -17,6 +18,7 @@ import {
 
 const LogIn = () => {
   const { setUser } = useContext(Auth);
+  const { setCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -29,8 +31,10 @@ const LogIn = () => {
       });
       const { cart, ...data } = response.data;
       setUser(data);
-      // setCart(cart);
+      setCart(cart);
       navigate("/");
+      const { token } = response.data;
+      localStorage.setItem("token", token);
     } catch (error) {
       console.error(error);
     }

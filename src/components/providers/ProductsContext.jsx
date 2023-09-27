@@ -1,7 +1,6 @@
 import React from "react";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import api from "../../api";
-import { useEffect } from "react";
 
 export const Products = createContext();
 
@@ -21,7 +20,7 @@ export function ProductsProvider({ children }) {
 
         setProducts(products.data.products);
         setTop3Products(topProducts.data);
-        setTop3Products(categories.data.categories);
+        setCategories(categories.data.categories);
       } catch (error) {
         console.error(error);
       }

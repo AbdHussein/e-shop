@@ -12,9 +12,11 @@ import StyledInputBase from "./styled/StyledInputBase";
 import Notes from "./styled/Notes";
 import { Link } from "react-router-dom";
 import { Wishlist } from "./providers/WishlistContext.jsx";
+import { CartContext } from "./providers/CartContext";
 
 const NavApp = () => {
   const { items } = useContext(Wishlist);
+  const { cart } = useContext(CartContext);
   // /search?q=""
   return (
     <AppBar position="sticky">
@@ -74,7 +76,7 @@ const NavApp = () => {
           <Link to="/Cart" style={{ color: "white" }}>
             <Badge
               color="error"
-              badgeContent={0}
+              badgeContent={cart.length}
               showZero
               sx={{
                 cursor: "pointer",

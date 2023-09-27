@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Grid from "@mui/material/Grid";
 import { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -9,7 +9,9 @@ import ImgCard from "../components/styled/ImgCard";
 import CounterCarts from "../components/styled/CounterCarts";
 import { AiOutlineClose } from "react-icons/ai";
 import DeleteCard from "../components/styled/DeleteCard";
-const OneCart = ({ src, price, text }) => {
+import { CartContext } from "./providers/CartContext";
+const OneCart = ({ src, price, text, id }) => {
+  const { removeFromcart } = useContext(CartContext);
   const [count, setCount] = useState(0);
   const IncNum = () => {
     setCount(count + 1);
@@ -56,7 +58,7 @@ const OneCart = ({ src, price, text }) => {
           <Typography>{price}</Typography>
           <DeleteCard>
             {" "}
-            <AiOutlineClose />
+            <AiOutlineClose onClick={() => removeFromcart(id)} />
           </DeleteCard>
         </Grid>
       </Grid>
