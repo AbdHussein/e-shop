@@ -12,34 +12,37 @@ import PaymentSuccess from "./components/PaymentSuccess";
 import CreateProduct from "./pages/CreateProduct";
 import Products from "./pages/Products";
 import Account from "./pages/Account";
-import WishlistProvider from "./components/providers/WishlistContext"
-import ProductsProvider from "./components/providers/ProductsContext"
-import  AuthProvider  from "./components/providers/AuthContext";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import WishlistProvider from "./components/providers/WishlistContext";
+import ProductsProvider from "./components/providers/ProductsContext";
+import AuthProvider from "./components/providers/AuthContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { CartProvider } from "./components/providers/CartContext";
 
 function App() {
   return (
     <AuthProvider>
-    <ProductsProvider>
-      <WishlistProvider>
-          <NavApp />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Cart" element={<Cart />} />
-            <Route path="/Product" element={<Product />} />
-            <Route path="/LogIn" element={<LogIn />} />
-            <Route path="/SignUp" element={<SignUp />} />
-            <Route path="/Payments" element={<Payments />} />
-            <Route path="/Search" element={<Search />} />
-            <Route path="/PaymentSuccess" element={<PaymentSuccess />} />
-            <Route path="/CreateProduct" element={<CreateProduct />} />
-            <Route path="/Products" element={<Products />} />
-            <Route path="/Account" element={<Account />} />
-          </Routes>
-          <ToastContainer />
-      </WishlistProvider>
-    </ProductsProvider>
+      <ProductsProvider>
+        <WishlistProvider>
+          <CartProvider>
+            <NavApp />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Cart" element={<Cart />} />
+              <Route path="/Product" element={<Product />} />
+              <Route path="/LogIn" element={<LogIn />} />
+              <Route path="/SignUp" element={<SignUp />} />
+              <Route path="/Payments" element={<Payments />} />
+              <Route path="/Search" element={<Search />} />
+              <Route path="/PaymentSuccess" element={<PaymentSuccess />} />
+              <Route path="/CreateProduct" element={<CreateProduct />} />
+              <Route path="/Products" element={<Products />} />
+              <Route path="/Account" element={<Account />} />
+            </Routes>
+            <ToastContainer />
+          </CartProvider>
+        </WishlistProvider>
+      </ProductsProvider>
     </AuthProvider>
   );
 }

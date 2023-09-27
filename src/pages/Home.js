@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Category from "../components/Category";
 import Box from "@mui/material/Box";
 import { Divider, Typography } from "@mui/material";
@@ -8,11 +8,11 @@ import SectionHeading from "../components/styled/SectionHeading";
 import YellowSpan from "../components/styled/YellowSpan";
 import HomeSlider from "../components/HomeSlider";
 import FeaturedProducts from "../components/FeaturedProducts";
-import ViewProuducts from '../components/ViewProuducts';
+import ViewProuducts from "../components/ViewProuducts";
 import { Products } from "../components/providers/ProductsContext";
 
-
 const Home = () => {
+  const { categories } = useContext(Products);
 
   return (
     <>
@@ -23,26 +23,19 @@ const Home = () => {
       <section className="Featured Categories">
         <Container>
           <SectionHeading>
-            <Typography variant="h2" sx={{ marginBottom: '10px' }}>
+            <Typography variant="h2" sx={{ marginBottom: "10px" }}>
               Featured Categories
             </Typography>
             <YellowSpan></YellowSpan>
           </SectionHeading>
-          <Divider sx={{ marginBottom: '43px' }} />
+          <Divider sx={{ marginBottom: "43px" }} />
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={3}>
-              <Grid item xs={3}>
-                <Category src={'/static/laptop.png'} text={'LAPTOP'} />
-              </Grid>
-              <Grid item xs={3}>
-                <Category src={'/static/pc.png'} text={'COMPUTER COMPONENTS'} />
-              </Grid>
-              <Grid item xs={3}>
-                <Category src={'/static/phones.png'} text={'DEVICES'} />
-              </Grid>
-              <Grid item xs={3}>
-                <Category src={'/static/img4.PNG'} text={'ACCESSORIES'} />
-              </Grid>
+              {categories.slice(0, 4).map((categoryItem) => (
+                <Grid key={categoryItem.name} item xs={3}>
+                  <Category categoryInfo={categoryItem} />
+                </Grid>
+              ))}
             </Grid>
           </Box>
         </Container>
@@ -57,12 +50,12 @@ const Home = () => {
       <section className="TopRateProducte">
         <Container>
           <SectionHeading>
-            <Typography variant="h2" sx={{ marginBottom: '10px' }}>
+            <Typography variant="h2" sx={{ marginBottom: "10px" }}>
               TOP RATE PRODUCTS
             </Typography>
             <YellowSpan></YellowSpan>
           </SectionHeading>
-          <Divider sx={{ marginBottom: '43px' }} />
+          <Divider sx={{ marginBottom: "43px" }} />
           <ViewProuducts />
         </Container>
       </section>
