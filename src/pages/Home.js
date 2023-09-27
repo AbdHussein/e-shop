@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import Category from "../components/Category";
 import Box from "@mui/material/Box";
 import { Divider, Typography } from "@mui/material";
@@ -10,25 +10,9 @@ import HomeSlider from "../components/HomeSlider";
 import FeaturedProducts from "../components/FeaturedProducts";
 import ViewProuducts from '../components/ViewProuducts';
 import { Products } from "../components/providers/ProductsContext";
-import api from "../api";
+
 
 const Home = () => {
-  const { products, setProducts } = useContext(Products)
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await api.get('/api/products')
-
-        setProducts(response.data.products)
-      } catch (error) {
-        console.error(error)
-      }
-    }
-    getData()
-  }, [])
-
-  console.log({products})
 
   return (
     <>
@@ -64,12 +48,12 @@ const Home = () => {
         </Container>
       </section>
       <section
-      className="Featured-Products"
-      style={{ backgroundColor: "#F7F8FC", padding: "20px 0px" }}
-    >
-       <FeaturedProducts/>
-    </section>
-    
+        className="Featured-Products"
+        style={{ backgroundColor: "#F7F8FC", padding: "20px 0px" }}
+      >
+        <FeaturedProducts />
+      </section>
+
       <section className="TopRateProducte">
         <Container>
           <SectionHeading>

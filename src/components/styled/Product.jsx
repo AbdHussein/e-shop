@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Card } from "@mui/material";
 
 export const Product = styled(Card)`
-  border-radius: 20px;
+  border-radius: 20px !important;
   min-width: 260px;
   height: 380px;
   display: flex;
