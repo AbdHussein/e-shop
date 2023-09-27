@@ -15,6 +15,8 @@ import Account from "./pages/Account";
 import WishlistProvider from "./components/providers/WishlistContext"
 import ProductsProvider from "./components/providers/ProductsContext"
 import  AuthProvider  from "./components/providers/AuthContext";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -35,6 +37,7 @@ function App() {
             <Route path="/Products" element={<Products />} />
             <Route path="/Account" element={<Account />} />
           </Routes>
+          <ToastContainer />
       </WishlistProvider>
     </ProductsProvider>
     </AuthProvider>
