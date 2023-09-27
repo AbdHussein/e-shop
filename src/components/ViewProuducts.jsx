@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Grid from "@mui/material/Grid";
 
 import ProductCard from "./ProductCard";
 import Divider from "@mui/material/Divider";
+import { Products } from "./providers/ProductsContext";
 
 const ViewProuducts = () => {
+  const { top3Products } = useContext(Products);
+
   return (
     <div>
       <Grid
@@ -16,23 +19,12 @@ const ViewProuducts = () => {
           justifyContent: "center",
         }}
       >
-        <ProductCard
-          src={"/static/camera.jfif"}
-          text={"Canon Eos 80D DSLR Camera"}
-          price={"$799.99"}
-        ></ProductCard>
-        <Divider orientation="vertical" flexItem />
-        <ProductCard
-          src={"/static/mouse.jfif"}
-          text={"Logitech G-Series Gaming Mouse"}
-          price={"$49.99"}
-        ></ProductCard>
-        <Divider orientation="vertical" flexItem />
-        <ProductCard
-          src={"/static/3d-generator.jfif"}
-          text={"Amazon Echo Dot 3rd Generation"}
-          price={"$29.99"}
-        ></ProductCard>
+        {top3Products.map((Top3Product) => (
+          <Grid key={Top3Product._id} item xs={4}>
+            <ProductCard product={Top3Product} />
+            <Divider orientation="vertical" flexItem />
+          </Grid>
+        ))}
       </Grid>
     </div>
   );

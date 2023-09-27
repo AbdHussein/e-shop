@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import SectionHeading from "./styled/SectionHeading";
 import { Container, Divider, Grid, Typography } from "@mui/material";
-
 import ProductCard from "./ProductCard";
 import YellowSpan from "./styled/YellowSpan";
+import { Products } from "./providers/ProductsContext";
 
 export const FeaturedProducts = () => {
+  const { products } = useContext(Products);
   return (
     <Container>
       <SectionHeading sx={{ alignItems: "center" }}>
@@ -16,14 +17,12 @@ export const FeaturedProducts = () => {
       </SectionHeading>
       <Divider sx={{ marginBottom: "43px" }} />
       <Grid container spacing={3} sx={{ flexWrap: "nowrap", gap: "10px" }}>
-        <Grid item xs={4}>
-          <ProductCard
-            src={"/static/img13.png"}
-            text={"Apple iPhone 11 Pro 256GB Memory"}
-            price={"$499.99"}
-          ></ProductCard>
-        </Grid>
-        <Grid item xs={4}>
+        {products.slice(0, 3).map((product) => (
+          <Grid key={product._id} item xs={4}>
+            <ProductCard product={product} />
+          </Grid>
+        ))}
+        {/* <Grid item xs={4}>
           <ProductCard
             src={"/static/headphones.png"}
             text={"Apple Airpods Wireless Bluetooth Headset"}
@@ -36,7 +35,7 @@ export const FeaturedProducts = () => {
             text={"Sony Playstation 4 Pro White Version"}
             price={"$399.99"}
           ></ProductCard>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Container>
   );

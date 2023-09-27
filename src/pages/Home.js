@@ -9,8 +9,11 @@ import YellowSpan from "../components/styled/YellowSpan";
 import HomeSlider from "../components/HomeSlider";
 import FeaturedProducts from "../components/FeaturedProducts";
 import ViewProuducts from '../components/ViewProuducts';
+import { Products } from "../components/providers/ProductsContext";
+
 
 const Home = () => {
+
   return (
     <>
       <section className="ShopSlider">
@@ -45,12 +48,12 @@ const Home = () => {
         </Container>
       </section>
       <section
-      className="Featured-Products"
-      style={{ backgroundColor: "#F7F8FC", padding: "20px 0px" }}
-    >
-       <FeaturedProducts/>
-    </section>
-    
+        className="Featured-Products"
+        style={{ backgroundColor: "#F7F8FC", padding: "20px 0px" }}
+      >
+        <FeaturedProducts />
+      </section>
+
       <section className="TopRateProducte">
         <Container>
           <SectionHeading>

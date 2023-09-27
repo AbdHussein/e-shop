@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
@@ -11,10 +11,13 @@ import SearchIconButton from "./styled/SearchIconButton";
 import StyledInputBase from "./styled/StyledInputBase";
 import Notes from "./styled/Notes";
 import { Link } from "react-router-dom";
+import { Wishlist } from "./providers/WishlistContext.jsx";
 
 const NavApp = () => {
+  const { items } = useContext(Wishlist);
+
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Toolbar sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
         <Typography variant="h4" marginLeft={6}>
           <Link to="/">
@@ -56,7 +59,7 @@ const NavApp = () => {
             </Badge>
           </Link>
           <Badge
-            badgeContent={0}
+            badgeContent={items.length}
             showZero
             sx={{
               display: "flex",
