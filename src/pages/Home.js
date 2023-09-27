@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import Category from "../components/Category";
 import Box from "@mui/material/Box";
 import { Divider, Typography } from "@mui/material";
@@ -11,39 +11,9 @@ import FeaturedProducts from "../components/FeaturedProducts";
 import ViewProuducts from "../components/ViewProuducts";
 import { Products } from "../components/providers/ProductsContext";
 import api from "../api";
-import { async } from "q";
 
 const Home = () => {
-  const { products, setProducts, setCategories, categories } = useContext(
-    Products
-  );
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await api.get("/api/products");
-
-        setProducts(response.data.products);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getData();
-  }, []);
-
-  useEffect(() => {
-    const getCategory = async () => {
-      try {
-        const response = await api.get("/api/products/category/all");
-        setCategories(response.data.categories);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getCategory();
-  }, []);
-
-  console.log({ products });
+  const { categories } = useContext(Products);
 
   return (
     <>

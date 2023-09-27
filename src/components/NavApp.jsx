@@ -15,7 +15,7 @@ import { Wishlist } from "./providers/WishlistContext.jsx";
 
 const NavApp = () => {
   const { items } = useContext(Wishlist);
-
+  // /search?q=""
   return (
     <AppBar position="sticky">
       <Toolbar sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
@@ -35,10 +35,8 @@ const NavApp = () => {
             }}
           />
           <SearchIconButton>
-            <Link to="/Search">
-              {" "}
-              <SearchIcon />
-            </Link>
+            {" "}
+            <SearchIcon />
           </SearchIconButton>
         </Search>
 
