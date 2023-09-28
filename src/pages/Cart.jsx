@@ -38,11 +38,11 @@ const Cart = () => {
         </Typography>
       </Breadcrumbs>
 
+
       {cart.items && cart.items.length === 0 ? (
         <section>
           <Container>
             <EmptyCart />
-
             <SectionHeading>
               <Typography variant="h2" sx={{ marginBottom: "10px" }}>
                 Recently viewed
