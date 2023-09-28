@@ -51,7 +51,7 @@ const OneCart = ({ item }) => {
           <CounterCarts>
             <Button
               onClick={DecNum}
-              disabled={count === 0}
+              disabled={count === 1}
               sx={{ outlineColor: "yellow" }}
             >
               <AiOutlineMinus />

@@ -12,7 +12,8 @@ import YellowSpan from "../components/styled/YellowSpan";
 import Container from "@mui/material/Container";
 import ViewProuducts from "../components/ViewProuducts";
 import { Divider } from "@mui/material";
-import { CartContext } from "./providers/CartContext";
+import { CartContext } from "../components/providers/CartContext";
+
 const Cart = () => {
   const navigate = useNavigate();
   const { cart } = useContext(CartContext);
@@ -47,6 +48,7 @@ const Cart = () => {
           </Grid>
         </Grid>
       </section>
+
       <section style={{ display: "none" }}>
         <EmptyCart />
       </section>
