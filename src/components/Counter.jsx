@@ -4,22 +4,15 @@ import { BiPlus, BiMinus } from "react-icons/bi";
 import React, { useState } from "react";
 import IconButton from "./styled/IconButton";
 
-export const Counter = () => {
-  const [count, setCount] = useState(0);
+export const Counter = ({ count, setCount }) => {
   const IncNum = () => {
-    setCount(count + 1);
+    setCount((count) => count + 1);
   };
-  const DecNum = (event) => {
-    if (count > 0) {
-   
-      setCount(count - 1);
-     }
-    else  {
-      setCount(0);
 
-    }
-
+  const DecNum = () => {
+    setCount((count) => count - 1);
   };
+
   return (
     <Box
       sx={{
@@ -32,7 +25,8 @@ export const Counter = () => {
       }}
     >
       <IconButton
-        onClick={DecNum} disabled={count===0 ?true:false}
+        onClick={DecNum}
+        disabled={count === 0}
         sx={{
           width: "20px",
           border: "1px solid #FCDD06",

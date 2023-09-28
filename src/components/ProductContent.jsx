@@ -1,30 +1,44 @@
 import { Box, Typography } from "@mui/material";
 import Counter from "./Counter";
-import React from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import ProductColor from "./ProductColor";
 import ProductTitle from "./styled/ProductTitle";
 import ProductSize from "./ProductSize";
 import DivButtons from "./styled/DivButtons";
 import AddingButton from "./styled/AddingButton";
-import { FaRegBookmark } from "react-icons/fa";
+import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import IconButton from "./styled/IconButton";
+import { CartContext } from "./providers/CartContext";
+import { Products } from "./providers/ProductsContext";
+import { Wishlist } from "./providers/WishlistContext";
 
-export const ProductContent = ({ title, price, discription }) => {
+export const ProductContent = ({ productDetails, isInCart }) => {
+  const [count, setCount] = useState(1);
+  const { addToCart } = useContext(CartContext);
+  const { items, addToWishlist, removeFromWishlist } = useContext(Wishlist);
+  const handleAddToCart = () => {
+    addToCart(productDetails._id, count);
+  };
+  const isInWishlist = items.find(({ _id }) => productDetails._id === _id);
+
   return (
     <>
       <Box sx={{ display: "flex", flexDirection: "column", gap: "25px" }}>
         <ProductTitle>
           <Typography variant="h2" sx={{ fontSize: "25px" }}>
-            {title}
+            {productDetails.name}
           </Typography>
           <Typography variant="body1" sx={{ fontSize: "25px" }}>
-            {price}
+            {`$${productDetails.price}`}
           </Typography>
         </ProductTitle>
 
-        <Counter />
-        <ProductColor color={"silver"} />
+        <Counter count={count} setCount={setCount} />
+
+        {productDetails.colors ? (
+          <ProductColor colors={productDetails.colors} />
+        ) : null}
         <div
           style={{
             display: "flex",
@@ -33,7 +47,7 @@ export const ProductContent = ({ title, price, discription }) => {
             gap: "60px",
           }}
         >
-          <ProductSize />
+          {productDetails.sizes ? <ProductSize /> : null}
           <DivButtons>
             <IconButton
               sx={{
@@ -44,7 +58,13 @@ export const ProductContent = ({ title, price, discription }) => {
                 backgroundColor: "#fff !important",
               }}
             >
-              <FaRegBookmark />
+              {isInWishlist ? (
+                <FaBookmark
+                  onClick={() => removeFromWishlist(productDetails)}
+                />
+              ) : (
+                <FaRegBookmark onClick={() => addToWishlist(productDetails)} />
+              )}
             </IconButton>
 
             <AddingButton
@@ -52,13 +72,15 @@ export const ProductContent = ({ title, price, discription }) => {
                 backgroundColor: "#FCDD06 !important",
                 borderRadius: "5px !important",
               }}
+              disabled={isInCart}
+              onClick={handleAddToCart}
             >
               Add to cart
             </AddingButton>
           </DivButtons>
         </div>
         <div>
-          <Typography variant="body2">{discription}</Typography>
+          <Typography variant="body2">{productDetails.description}</Typography>
         </div>
       </Box>
     </>

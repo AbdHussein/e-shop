@@ -38,33 +38,34 @@ const Cart = () => {
         </Typography>
       </Breadcrumbs>
 
-      <section style={{ marginTop: "10px" }}>
-        <Grid container spacing={4}>
-          <Grid item xs={8}>
-            <Carts />
-          </Grid>
-          <Grid item xs={4}>
-            <CartItems cartItems={cart} />
-          </Grid>
-        </Grid>
-      </section>
 
-      <section style={{ display: "none" }}>
-        <EmptyCart />
-      </section>
-      <section style={{ display: "none" }}>
-        <Container>
-          <SectionHeading>
-            <Typography variant="h2" sx={{ marginBottom: "10px" }}>
-              Recently viewed
-            </Typography>
-            <YellowSpan></YellowSpan>
-          </SectionHeading>
-          <Divider sx={{ marginBottom: "43px" }} />
+      {cart.items && cart.items.length === 0 ? (
+        <section>
+          <Container>
+            <EmptyCart />
+            <SectionHeading>
+              <Typography variant="h2" sx={{ marginBottom: "10px" }}>
+                Recently viewed
+              </Typography>
+              <YellowSpan></YellowSpan>
+            </SectionHeading>
+            <Divider sx={{ marginBottom: "43px" }} />
 
-          <ViewProuducts />
-        </Container>
-      </section>
+            <ViewProuducts />
+          </Container>
+        </section>
+      ) : (
+        <section style={{ marginTop: "10px" }}>
+          <Grid container spacing={4}>
+            <Grid item xs={8}>
+              <Carts />
+            </Grid>
+            <Grid item xs={4}>
+              <CartItems cartItems={cart} />
+            </Grid>
+          </Grid>
+        </section>
+      )}
     </div>
   );
 };
