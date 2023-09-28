@@ -76,7 +76,7 @@ const NavApp = () => {
           <Link to="/Cart" style={{ color: "white" }}>
             <Badge
               color="error"
-              badgeContent={cart.length}
+              badgeContent={cart.items && cart.items.length}
               showZero
               sx={{
                 cursor: "pointer",
