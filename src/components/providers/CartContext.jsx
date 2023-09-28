@@ -7,11 +7,11 @@ export const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState({});
 
-  const addToCart = async (productId) => {
+  const addToCart = async (productId, count = 1) => {
     try {
       const response = await api.put("/api/users/profile/cart", {
         productId,
-        qty: 1,
+        qty: count,
       });
 
       setCart(response.data.cart);
@@ -24,17 +24,6 @@ export function CartProvider({ children }) {
       const response = await api.delete(
         `/api/users/profile/cart?productId=${productId}`
       );
-      setCart(response.data.cart);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  const quantity = async (productId, count) => {
-    try {
-      const response = await api.put("/api/users/profile/cart", {
-        productId,
-        qty: count,
-      });
       setCart(response.data.cart);
     } catch (error) {
       console.error(error);
@@ -56,7 +45,7 @@ export function CartProvider({ children }) {
         setCart,
         addToCart,
         removeFromcart,
-        quantity,
+        quantity: addToCart,
       }}
     >
       {children}

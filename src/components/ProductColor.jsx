@@ -1,8 +1,9 @@
 import { Box, Button, ButtonGroup, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import ColorBtn from "./styled/ColorBtn";
 
-export const ProductColor = ({ color }) => {
+export const ProductColor = ({ colors }) => {
+  const [color, setColor] = useState();
   return (
     <Box>
       <Typography sx={{ fontSize: "20px", color: "#BCBCBC" }}>
@@ -11,22 +12,20 @@ export const ProductColor = ({ color }) => {
           {color}
         </span>
       </Typography>
-      <ButtonGroup sx={{ display: "flex", gap: "20px" }}>
-        <ColorBtn
-          style={{
-            backgroundColor: "pink",
-          }}
-        />
-        <ColorBtn
-          style={{
-            backgroundColor: "#EDEAE3",
-          }}
-        />
-        <ColorBtn
-          style={{
-            backgroundColor: "#707070",
-          }}
-        />
+
+      <ButtonGroup
+        sx={{ display: "flex", gap: "20px", flexDirection: "row !important" }}
+      >
+        {colors.map((bgColor) => (
+          <ColorBtn
+            onClick={() => {
+              setColor(bgColor);
+            }}
+            style={{
+              backgroundColor: bgColor,
+            }}
+          />
+        ))}
       </ButtonGroup>
     </Box>
   );

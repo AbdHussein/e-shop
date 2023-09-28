@@ -7,6 +7,7 @@ import { Products } from "./providers/ProductsContext";
 
 export const FeaturedProducts = () => {
   const { products } = useContext(Products);
+
   return (
     <Container>
       <SectionHeading sx={{ alignItems: "center" }}>

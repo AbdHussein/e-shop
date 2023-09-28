@@ -4,7 +4,7 @@ import ImgBox from "./styled/ImgBox";
 import styled from "styled-components";
 import SmallImgBox from "./styled/SmallImgBox";
 
-const SideImgs = ({ src1, src2, src3, src }) => {
+const SideImgs = ({ src }) => {
   return (
     <Box
       sx={{
@@ -22,44 +22,22 @@ const SideImgs = ({ src1, src2, src3, src }) => {
         }}
       >
         <img
-          src={src}
+          src={src && src[0]}
           alt=""
           width={"100%"}
           height={"100%"}
           style={{ padding: "30px" }}
         />
       </ImgBox>
-      <Grid container sx={{ gap: "20px", flexWrap: "nowrap" }}>
-        {/* {images.slice(1).map((image) => (
-          <SmallImgBox>
-            <img src={image} alt="" width={"100%"} height={"140px"} />
-          </SmallImgBox>
-        ))} */}
-
-        {/* <SmallImgBox>
-          <img src={src1} alt="" width={"100%"} height={"140px"} />
-        </SmallImgBox>
-
-        <SmallImgBox>
-          <img
-            src={src2}
-            alt=""
-            width={"100%"}
-            height={"140px"}
-            style={{ padding: "20px" }}
-          />
-        </SmallImgBox>
-
-        <SmallImgBox>
-          <img
-            src={src3}
-            alt=""
-            width={"100%"}
-            height={"140px"}
-            style={{ padding: "20px" }}
-          />
-        </SmallImgBox> */}
-      </Grid>
+      {src && src.length > 1 ? (
+        <Grid container sx={{ gap: "20px", flexWrap: "nowrap" }}>
+          {src.slice(1).map((image) => (
+            <SmallImgBox>
+              <img src={image} alt="" width={"100%"} height={"140px"} />
+            </SmallImgBox>
+          ))}
+        </Grid>
+      ) : null}
     </Box>
   );
 };
