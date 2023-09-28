@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Carts from "../components/Carts";
 import Grid from "@mui/material/Grid";
 
@@ -12,9 +12,10 @@ import YellowSpan from "../components/styled/YellowSpan";
 import Container from "@mui/material/Container";
 import ViewProuducts from "../components/ViewProuducts";
 import { Divider } from "@mui/material";
+import { CartContext } from "./providers/CartContext";
 const Cart = () => {
   const navigate = useNavigate();
-
+  const { cart } = useContext(CartContext);
   return (
     <div>
       <Breadcrumbs
@@ -42,7 +43,7 @@ const Cart = () => {
             <Carts />
           </Grid>
           <Grid item xs={4}>
-            <CartItems NoOFitems={"3"} Total={"$999.97"} subTotal={"$989.97"} />
+            <CartItems cartItems={cart} />
           </Grid>
         </Grid>
       </section>
