@@ -8,15 +8,10 @@ const Carts = () => {
   return (
     <div>
       <ul className="cartsList">
-        {cart.map((item) => (
-          <OneCart
-            key={item.product._id}
-            src={item.product.images}
-            text={item.product.name}
-            price={item.product.price}
-            id={item.product._id}
-          />
-        ))}
+        {cart.items &&
+          cart.items.map((item) => (
+            <OneCart key={item.product._id} item={item} />
+          ))}
       </ul>
     </div>
   );
