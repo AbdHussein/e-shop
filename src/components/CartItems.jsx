@@ -6,26 +6,18 @@ import CartItemsPay from "./styled/CartItemsPay";
 import CartCheckOut from "./styled/CartCheckOut";
 import Button from "@mui/material/Button";
 import { Link, useNavigate } from "react-router-dom";
-const CartItems = ({ NoOFitems, Total, subTotal }) => {
+const CartItems = ({ cartItems }) => {
   return (
     <CartItemsPay>
       <Grid container spacing={2} columns={4}>
         <Grid item xs={4}>
           <Typography variant="h2" fontWeight="400">
-            Subtotal ({NoOFitems}) items
+            Subtotal ({cartItems.items && cartItems.items.length}) items
           </Typography>
         </Grid>
+
         <Grid item xs={4}>
-          <Typography
-            variant="h3"
-            fontWeight="400"
-            sx={{ textDecoration: "line-through" }}
-          >
-            {Total}
-          </Typography>
-        </Grid>
-        <Grid item xs={4}>
-          <Typography variant="h2">{subTotal}</Typography>
+          <Typography variant="h2">{cartItems.totalPrice}</Typography>
         </Grid>
 
         <Grid item xs={4}>

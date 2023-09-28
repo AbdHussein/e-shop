@@ -1,9 +1,10 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const DeleteCard = styled("div")(({ theme }) => ({
-position:"relative",
-top: "-50%",
-RIGHT: "3PX"
-  }));
+  position: "relative",
+  top: "-50%",
+  RIGHT: "3PX",
+  cursor: "pointer",
+}));
 
-export default DeleteCard
+export default DeleteCard;

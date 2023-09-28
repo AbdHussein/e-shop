@@ -34,6 +34,8 @@ const SignUp = () => {
       setUser(response.data);
       toast.success("Signed up successfully");
       navigate("/");
+      const { token } = response.data;
+      localStorage.setItem("token", token);
     } catch (error) {
       console.error(error);
       toast.error(error.response.data.message);
