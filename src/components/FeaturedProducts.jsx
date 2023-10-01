@@ -5,8 +5,10 @@ import ProductCard from "./ProductCard";
 import YellowSpan from "./styled/YellowSpan";
 import { Products } from "./providers/ProductsContext";
 
-export const FeaturedProducts = () => {
-  const { products } = useContext(Products);
+export const FeaturedProducts = ({ isInSearch }) => {
+  const { products, searchProduct } = useContext(Products);
+
+  const _products = isInSearch ? searchProduct : products;
 
   return (
     <Container>
@@ -17,8 +19,9 @@ export const FeaturedProducts = () => {
         <YellowSpan></YellowSpan>
       </SectionHeading>
       <Divider sx={{ marginBottom: "43px" }} />
+
       <Grid container spacing={3} sx={{ flexWrap: "nowrap", gap: "10px" }}>
-        {products.slice(0, 3).map((product) => (
+        {_products.slice(0, 3).map((product) => (
           <Grid key={product._id} item xs={4}>
             <ProductCard product={product} />
           </Grid>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
@@ -10,14 +10,16 @@ import Search from "./styled/Search";
 import SearchIconButton from "./styled/SearchIconButton";
 import StyledInputBase from "./styled/StyledInputBase";
 import Notes from "./styled/Notes";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Wishlist } from "./providers/WishlistContext.jsx";
 import { CartContext } from "./providers/CartContext";
 
 const NavApp = () => {
   const { items } = useContext(Wishlist);
   const { cart } = useContext(CartContext);
-  // /search?q=""
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
   return (
     <AppBar position="sticky">
       <Toolbar sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
@@ -30,13 +32,22 @@ const NavApp = () => {
         <Search>
           <StyledInputBase
             placeholder="Iphone"
+            name="searchVal"
+            onChange={(event) => {
+              setSearch(event.target.value);
+            }}
+            value={search}
             inputProps={{
               style: {
                 fontSize: 16,
               },
             }}
           />
-          <SearchIconButton>
+          <SearchIconButton
+            onClick={() => {
+              navigate(`/Search?q=${search}`);
+            }}
+          >
             {" "}
             <SearchIcon />
           </SearchIconButton>
