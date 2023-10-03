@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import CartItemsPay from "./styled/CartItemsPay";
 import CartCheckOut from "./styled/CartCheckOut";
 import Button from "@mui/material/Button";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const CartItems = ({ cartItems }) => {
   return (
     <CartItemsPay>

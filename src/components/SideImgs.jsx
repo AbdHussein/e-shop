@@ -1,7 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import ImgBox from "./styled/ImgBox";
-import styled from "styled-components";
 import SmallImgBox from "./styled/SmallImgBox";
 
 const SideImgs = ({ src }) => {

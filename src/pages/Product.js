@@ -2,10 +2,9 @@ import { Breadcrumbs, Container, Grid, Typography } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import SideImgs from "../components/SideImgs";
 import ProductContent from "../components/ProductContent";
-import ProductDetails from "../components/ProductDetails";
 import Reviews from "../components/Reviews";
 import FeaturedProducts from "../components/FeaturedProducts";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import api from "../api";
 import { CartContext } from "../components/providers/CartContext";
 

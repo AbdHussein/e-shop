@@ -1,12 +1,10 @@
-import React, { useContext } from "react";
-import Box from "@mui/material/Box";
+import React from "react";
 import { Typography } from "@mui/material";
 
 import "@fontsource/mulish"; // Defaults to weight 400
 import "@fontsource/mulish/800.css"; // Specify weight
 import NewBox from "./styled/NewBox";
 import ImgBox from "./styled/ImgBox";
-import { Products } from "./providers/ProductsContext";
 
 export const Category = ({ categoryInfo }) => {
   return (
