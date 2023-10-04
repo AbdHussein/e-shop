@@ -13,10 +13,12 @@ import Notes from "./styled/Notes";
 import { Link, useNavigate } from "react-router-dom";
 import { Wishlist } from "./providers/WishlistContext.jsx";
 import { CartContext } from "./providers/CartContext";
+import { Auth } from "./providers/AuthContext";
 
 const NavApp = () => {
   const { items } = useContext(Wishlist);
   const { cart } = useContext(CartContext);
+  const { User } = useContext(Auth);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
@@ -104,19 +106,21 @@ const NavApp = () => {
               </Typography>
             </Badge>
           </Link>
-          <Link
-            to="/AdminProducts"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <InventoryIcon sx={{ fill: "white" }} />
-            <Typography fontSize="0.65rem" color={"white"}>
-              Products
-            </Typography>
-          </Link>
+          {User && User.isAdmin ? (
+            <Link
+              to="/AdminProducts"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <InventoryIcon sx={{ fill: "white" }} />
+              <Typography fontSize="0.65rem" color={"white"}>
+                Products
+              </Typography>
+            </Link>
+          ) : null}
         </Notes>
       </Toolbar>
     </AppBar>
