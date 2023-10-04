@@ -105,7 +105,7 @@ const NavApp = () => {
             </Badge>
           </Link>
           <Link
-            to="/Products"
+            to="/AdminProducts"
             style={{
               display: "flex",
               flexDirection: "column",

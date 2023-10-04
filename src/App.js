@@ -10,7 +10,7 @@ import SignUp from "./pages/SignUp";
 import Search from "./components/Search";
 import PaymentSuccess from "./components/PaymentSuccess";
 import CreateProduct from "./pages/CreateProduct";
-import Products from "./pages/Products";
+import AdminProducts from "./pages/AdminProducts";
 import Account from "./pages/Account";
 import WishlistProvider from "./components/providers/WishlistContext";
 import ProductsProvider from "./components/providers/ProductsContext";
@@ -18,7 +18,7 @@ import AuthProvider from "./components/providers/AuthContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CartProvider } from "./components/providers/CartContext";
-
+import ProtectedRoute from './components/ProtectedRoute'
 function App() {
   return (
     <AuthProvider>
@@ -35,8 +35,12 @@ function App() {
               <Route path="/Payments" element={<Payments />} />
               <Route path="/Search" element={<Search />} />
               <Route path="/PaymentSuccess" element={<PaymentSuccess />} />
-              <Route path="/CreateProduct" element={<CreateProduct />} />
-              <Route path="/Products" element={<Products />} />
+              <Route path="/CreateProduct" element={<ProtectedRoute>
+                <CreateProduct />
+              </ProtectedRoute>} />
+              <Route path="/AdminProducts" element={<ProtectedRoute>
+                <AdminProducts />
+              </ProtectedRoute>} />
               <Route path="/Account" element={<Account />} />
             </Routes>
             <ToastContainer />

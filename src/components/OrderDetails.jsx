@@ -1,5 +1,5 @@
 import { Divider, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
 const OrderDetails = ({ src, name, price, count, total, line = true }) => {
   return (
